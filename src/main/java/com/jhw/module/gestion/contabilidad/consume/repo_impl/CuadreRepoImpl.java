@@ -6,14 +6,12 @@
 package com.jhw.module.gestion.contabilidad.consume.repo_impl;
 
 import static com.jhw.module.gestion.contabilidad.core.ModuleGestionContabilidadEmpresarialConstants.*;
-import com.jhw.module.gestion.contabilidad.core.domain.CuadreDomain;
-import com.jhw.module.gestion.contabilidad.core.usecase_def.CuadreUseCase;
+import com.jhw.module.gestion.contabilidad.core.domain.*;
+import com.jhw.module.gestion.contabilidad.core.usecase_def.*;
 import com.jhw.module.util.rest_config.services.RESTHandler;
 import com.jhw.utils.spring.client.ConsumerRepoTemplate;
 import com.jhw.utils.spring.client.RestTemplateUtils;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  *

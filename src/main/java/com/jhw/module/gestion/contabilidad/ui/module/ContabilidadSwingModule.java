@@ -5,18 +5,7 @@ import com.clean.swing.app.DefaultAbstractSwingMainModule;
 import com.clean.swing.app.dashboard.DashBoardSimple;
 import com.clean.swing.app.dashboard.DashboardConstants;
 import com.jhw.module.gestion.contabilidad.consume.module.ContabilidadConsumeCoreModule;
-import com.jhw.module.gestion.contabilidad.core.usecase_def.CuadreUseCase;
-import com.jhw.module.gestion.contabilidad.core.usecase_def.CuentaBancariaUseCase;
-import com.jhw.module.gestion.contabilidad.core.usecase_def.CuentaContableUseCase;
-import com.jhw.module.gestion.contabilidad.core.usecase_def.FormaPagoUseCase;
-import com.jhw.module.gestion.contabilidad.core.usecase_def.InfoOperacionContableUseCase;
-import com.jhw.module.gestion.contabilidad.core.usecase_def.LiquidacionUseCase;
-import com.jhw.module.gestion.contabilidad.core.usecase_def.MonedaUseCase;
-import com.jhw.module.gestion.contabilidad.core.usecase_def.OperacionContableUseCase;
-import com.jhw.module.gestion.contabilidad.core.usecase_def.SubcuentaUseCase;
-import com.jhw.module.gestion.contabilidad.core.usecase_def.TipoCuentaUseCase;
-import com.jhw.module.gestion.contabilidad.core.usecase_def.TipoOperacionContableUseCase;
-import com.jhw.module.gestion.contabilidad.core.usecase_def.TitularUseCase;
+import com.jhw.module.gestion.contabilidad.consume.usecase_def.*;
 import com.jhw.module.gestion.contabilidad.service.ResourceServiceImplementation;
 import com.jhw.module.gestion.contabilidad.ui.cuadre.CuadreDetailView;
 import com.jhw.module.gestion.contabilidad.ui.cuenta.CuentasMainPanel;
@@ -33,34 +22,32 @@ public class ContabilidadSwingModule extends DefaultAbstractSwingMainModule {
 
     private final ContabilidadModuleNavigator navigator = new ContabilidadModuleNavigator();
 
-    public final static CuadreUseCase cuadreUC;
-    public final static CuentaBancariaUseCase cuentaBancariaUC;
-    public final static CuentaContableUseCase cuentaContableUC;
-    public final static InfoOperacionContableUseCase infoOpUC;
-    public final static LiquidacionUseCase liquicadionUC;
-    public final static MonedaUseCase monedaUC;
-    public final static OperacionContableUseCase operacionContableUC;
-    public final static SubcuentaUseCase subcuentaUC;
-    public final static TipoCuentaUseCase tipoCuentaUC;
-    public final static TipoOperacionContableUseCase tipoOperacionContableUC;
-    public final static FormaPagoUseCase formaPagoUC;
-    public final static TitularUseCase titularUC;
+    public final static CuadreUseCaseConsume cuadreUC;
+    public final static CuentaBancariaUseCaseConsume cuentaBancariaUC;
+    public final static CuentaContableUseCaseConsume cuentaContableUC;
+    public final static InfoOperacionContableUseCaseConsume infoOpUC;
+    public final static LiquidacionUseCaseConsume liquicadionUC;
+    public final static MonedaUseCaseConsume monedaUC;
+    public final static OperacionContableUseCaseConsume operacionContableUC;
+    public final static TipoCuentaUseCaseConsume tipoCuentaUC;
+    public final static TipoOperacionContableUseCaseConsume tipoOperacionContableUC;
+    public final static FormaPagoUseCaseConsume formaPagoUC;
+    public final static TitularUseCaseConsume titularUC;
 
     static {
         ContabilidadConsumeCoreModule.init();
 
-        cuadreUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(CuadreUseCase.class);
-        cuentaBancariaUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(CuentaBancariaUseCase.class);
-        cuentaContableUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(CuentaContableUseCase.class);
-        infoOpUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(InfoOperacionContableUseCase.class);
-        liquicadionUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(LiquidacionUseCase.class);
-        formaPagoUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(FormaPagoUseCase.class);
-        monedaUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(MonedaUseCase.class);
-        operacionContableUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(OperacionContableUseCase.class);
-        subcuentaUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(SubcuentaUseCase.class);
-        tipoCuentaUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(TipoCuentaUseCase.class);
-        tipoOperacionContableUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(TipoOperacionContableUseCase.class);
-        titularUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(TitularUseCase.class);
+        cuadreUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(CuadreUseCaseConsume.class);
+        cuentaBancariaUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(CuentaBancariaUseCaseConsume.class);
+        cuentaContableUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(CuentaContableUseCaseConsume.class);
+        infoOpUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(InfoOperacionContableUseCaseConsume.class);
+        liquicadionUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(LiquidacionUseCaseConsume.class);
+        formaPagoUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(FormaPagoUseCaseConsume.class);
+        monedaUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(MonedaUseCaseConsume.class);
+        operacionContableUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(OperacionContableUseCaseConsume.class);
+        tipoCuentaUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(TipoCuentaUseCaseConsume.class);
+        tipoOperacionContableUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(TipoOperacionContableUseCaseConsume.class);
+        titularUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(TitularUseCaseConsume.class);
 
         ResourceServiceImplementation.init();
     }

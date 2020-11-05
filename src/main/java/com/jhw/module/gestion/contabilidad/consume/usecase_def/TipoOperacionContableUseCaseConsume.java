@@ -2,5 +2,5 @@ package com.jhw.module.gestion.contabilidad.consume.usecase_def;
 
 import com.jhw.module.gestion.contabilidad.core.usecase_def.*;
 
-public interface TipoOperacionUseCaseConsume extends TipoOperacionContableUseCase {
+public interface TipoOperacionContableUseCaseConsume extends TipoOperacionContableUseCase {
 }

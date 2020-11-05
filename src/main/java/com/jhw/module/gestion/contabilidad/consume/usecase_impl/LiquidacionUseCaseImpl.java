@@ -16,27 +16,22 @@ import java.util.List;
  *
  * @author Jesus Hernandez Barrios (jhernandezb96@gmail.com)
  */
-public class CuadreUseCaseImpl extends DefaultCRUDUseCase<CuadreDomain> implements CuadreUseCaseConsume {
+public class LiquidacionUseCaseImpl extends DefaultCRUDUseCase<LiquidacionDomain> implements LiquidacionUseCaseConsume {
 
-    private final CuadreRepoImpl repoUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(CuadreRepoImpl.class);
+    private final LiquidacionRepoImpl repoUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(LiquidacionRepoImpl.class);
 
-    public CuadreUseCaseImpl() {
+    public LiquidacionUseCaseImpl() {
         setRepo(repoUC);
     }
 
     @Override
-    public List<CuadreDomain> findAllPending() throws Exception {
-        return repoUC.findAllPending();
+    public List<LiquidacionDomain> findAll(CuentaBancariaDomain cuenta) throws Exception {
+        return repoUC.findAll(cuenta);
     }
 
     @Override
-    public List<CuadreDomain> findAllLiquidadas() throws Exception {
-        return repoUC.findAllLiquidadas();
-    }
-
-    @Override
-    public List<CuadreDomain> findByLiquidada(boolean liquidada) throws Exception {
-        return repoUC.findByLiquidada(liquidada);
+    public LiquidacionDomain getLiquidacion(CuadreDomain cuadre) throws Exception {
+        return repoUC.getLiquidacion(cuadre);
     }
 
 }

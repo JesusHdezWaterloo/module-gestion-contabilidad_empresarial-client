@@ -10,33 +10,22 @@ import com.jhw.module.gestion.contabilidad.consume.module.ContabilidadConsumeCor
 import com.jhw.module.gestion.contabilidad.consume.repo_impl.*;
 import com.jhw.module.gestion.contabilidad.consume.usecase_def.*;
 import com.jhw.module.gestion.contabilidad.core.domain.*;
-import java.util.List;
 
 /**
  *
  * @author Jesus Hernandez Barrios (jhernandezb96@gmail.com)
  */
-public class CuadreUseCaseImpl extends DefaultCRUDUseCase<CuadreDomain> implements CuadreUseCaseConsume {
+public class TipoOperacionContableUseCaseImpl extends DefaultCRUDUseCase<TipoOperacionContableDomain> implements TipoOperacionContableUseCaseConsume {
 
-    private final CuadreRepoImpl repoUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(CuadreRepoImpl.class);
+    private final TipoOperacionContableRepoImpl repoUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(TipoOperacionContableRepoImpl.class);
 
-    public CuadreUseCaseImpl() {
+    public TipoOperacionContableUseCaseImpl() {
         setRepo(repoUC);
     }
 
     @Override
-    public List<CuadreDomain> findAllPending() throws Exception {
-        return repoUC.findAllPending();
-    }
-
-    @Override
-    public List<CuadreDomain> findAllLiquidadas() throws Exception {
-        return repoUC.findAllLiquidadas();
-    }
-
-    @Override
-    public List<CuadreDomain> findByLiquidada(boolean liquidada) throws Exception {
-        return repoUC.findByLiquidada(liquidada);
+    public TipoOperacionContableDomain findByKey(String key) {
+        return repoUC.findByKey(key);
     }
 
 }

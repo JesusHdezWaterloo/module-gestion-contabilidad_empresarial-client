@@ -4,7 +4,7 @@ import com.clean.swing.app.AbstractSwingApplication;
 import com.clean.swing.app.DefaultAbstractSwingMainModule;
 import com.clean.swing.app.dashboard.DashBoardSimple;
 import com.clean.swing.app.dashboard.DashboardConstants;
-import com.jhw.module.gestion.contabilidad.core.module.ContabilidadCoreModule;
+import com.jhw.module.gestion.contabilidad.consume.module.ContabilidadConsumeCoreModule;
 import com.jhw.module.gestion.contabilidad.core.usecase_def.CuadreUseCase;
 import com.jhw.module.gestion.contabilidad.core.usecase_def.CuentaBancariaUseCase;
 import com.jhw.module.gestion.contabilidad.core.usecase_def.CuentaContableUseCase;
@@ -17,8 +17,6 @@ import com.jhw.module.gestion.contabilidad.core.usecase_def.SubcuentaUseCase;
 import com.jhw.module.gestion.contabilidad.core.usecase_def.TipoCuentaUseCase;
 import com.jhw.module.gestion.contabilidad.core.usecase_def.TipoOperacionContableUseCase;
 import com.jhw.module.gestion.contabilidad.core.usecase_def.TitularUseCase;
-import com.jhw.module.gestion.contabilidad.repo.module.ContabilidadRepoModule;
-import com.jhw.module.gestion.contabilidad.repo.utils.ResourcesContabilidad;
 import com.jhw.module.gestion.contabilidad.service.ResourceServiceImplementation;
 import com.jhw.module.gestion.contabilidad.ui.cuadre.CuadreDetailView;
 import com.jhw.module.gestion.contabilidad.ui.cuenta.CuentasMainPanel;
@@ -30,7 +28,6 @@ import com.jhw.module.gestion.contabilidad.ui.titular.TitularDetailView;
 import com.jhw.swing.material.components.taskpane.CollapseMenu;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
-import com.jhw.module.util.mysql.services.MySQLHandler;
 
 public class ContabilidadSwingModule extends DefaultAbstractSwingMainModule {
 
@@ -50,20 +47,20 @@ public class ContabilidadSwingModule extends DefaultAbstractSwingMainModule {
     public final static TitularUseCase titularUC;
 
     static {
-        ContabilidadCoreModule.init(ContabilidadRepoModule.init());
+        ContabilidadConsumeCoreModule.init();
 
-        cuadreUC = ContabilidadCoreModule.getInstance().getImplementation(CuadreUseCase.class);
-        cuentaBancariaUC = ContabilidadCoreModule.getInstance().getImplementation(CuentaBancariaUseCase.class);
-        cuentaContableUC = ContabilidadCoreModule.getInstance().getImplementation(CuentaContableUseCase.class);
-        infoOpUC = ContabilidadCoreModule.getInstance().getImplementation(InfoOperacionContableUseCase.class);
-        liquicadionUC = ContabilidadCoreModule.getInstance().getImplementation(LiquidacionUseCase.class);
-        formaPagoUC = ContabilidadCoreModule.getInstance().getImplementation(FormaPagoUseCase.class);
-        monedaUC = ContabilidadCoreModule.getInstance().getImplementation(MonedaUseCase.class);
-        operacionContableUC = ContabilidadCoreModule.getInstance().getImplementation(OperacionContableUseCase.class);
-        subcuentaUC = ContabilidadCoreModule.getInstance().getImplementation(SubcuentaUseCase.class);
-        tipoCuentaUC = ContabilidadCoreModule.getInstance().getImplementation(TipoCuentaUseCase.class);
-        tipoOperacionContableUC = ContabilidadCoreModule.getInstance().getImplementation(TipoOperacionContableUseCase.class);
-        titularUC = ContabilidadCoreModule.getInstance().getImplementation(TitularUseCase.class);
+        cuadreUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(CuadreUseCase.class);
+        cuentaBancariaUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(CuentaBancariaUseCase.class);
+        cuentaContableUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(CuentaContableUseCase.class);
+        infoOpUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(InfoOperacionContableUseCase.class);
+        liquicadionUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(LiquidacionUseCase.class);
+        formaPagoUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(FormaPagoUseCase.class);
+        monedaUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(MonedaUseCase.class);
+        operacionContableUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(OperacionContableUseCase.class);
+        subcuentaUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(SubcuentaUseCase.class);
+        tipoCuentaUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(TipoCuentaUseCase.class);
+        tipoOperacionContableUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(TipoOperacionContableUseCase.class);
+        titularUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(TitularUseCase.class);
 
         ResourceServiceImplementation.init();
     }
@@ -147,11 +144,6 @@ public class ContabilidadSwingModule extends DefaultAbstractSwingMainModule {
     @Override
     public void navigateTo(String string, Object... o) {
         navigator.navigateTo(string, o);
-    }
-
-    @Override
-    public void closeModule() {
-        MySQLHandler.save(ResourcesContabilidad.SCHEMA);
     }
 
 }

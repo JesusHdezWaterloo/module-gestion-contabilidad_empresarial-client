@@ -8,7 +8,6 @@ import com.jhw.swing.models.clean.CleanCRUDInputView;
 import com.jhw.module.gestion.contabilidad.core.domain.facade.DocNombreUI;
 import com.jhw.module.gestion.contabilidad.core.domain.facade.FechaDescUI;
 import com.jhw.module.gestion.contabilidad.core.domain.facade.OperacionCuadreUI;
-import com.jhw.module.gestion.contabilidad.core.usecase_impl.TipoOperacionContableUseCaseImpl;
 import com.jhw.module.gestion.contabilidad.ui.cuadre.pedazos.DocNombreInputView;
 import com.jhw.module.gestion.contabilidad.ui.cuadre.pedazos.FechaDescInputView;
 import com.jhw.module.gestion.contabilidad.ui.module.ContabilidadSwingModule;
@@ -37,8 +36,9 @@ public class CuadreInputView extends CleanCRUDInputView<CuadreDomain> {
         //doc, nombre ....
         docNombreInputView = DocNombreInputView.from();
 
-        //valor, cuentas ....
-        operacionInputView = OperacionCuadreInputView.fromTipoOp(TipoOperacionContableUseCaseImpl.MOVIMIENTO_INTERNO);
+        //valor, cuentas ....//TODO
+        //operacionInputView = OperacionCuadreInputView.fromTipoOp(TipoOperacionContableUseCaseImpl.MOVIMIENTO_INTERNO);
+        operacionInputView = OperacionCuadreInputView.from();
 
         //fecha, desc ....
         fechaDescInputView = FechaDescInputView.from();

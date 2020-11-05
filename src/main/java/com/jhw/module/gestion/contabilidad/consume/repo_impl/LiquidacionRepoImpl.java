@@ -29,7 +29,7 @@ public class LiquidacionRepoImpl extends ConsumerRepoTemplate<LiquidacionDomain>
     public List<LiquidacionDomain> findAll(CuentaBancariaDomain cuenta) throws Exception {
         Map<String, Object> map = new HashMap<>();
         map.put(CUENTA, cuenta);
-        return RestTemplateUtils.getForList(template, urlGeneral + LIQUIDACION_FIND_ALL_PATH, LiquidacionDomain.class);
+        return RestTemplateUtils.getForList(template, urlGeneral + LIQUIDACION_FIND_ALL_PATH, map, LiquidacionDomain.class);
     }
 
     @Override

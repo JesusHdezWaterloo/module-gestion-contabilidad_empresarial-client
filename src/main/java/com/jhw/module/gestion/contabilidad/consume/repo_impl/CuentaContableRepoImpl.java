@@ -32,13 +32,13 @@ public class CuentaContableRepoImpl extends ConsumerRepoTemplate<CuentaContableD
     public List<CuentaContableDomain> findAllCuenta(TipoCuentaDomain tipo) throws Exception {
         Map<String, Object> map = new HashMap<>();
         map.put(TIPO_CUENTA, tipo);
-        return RestTemplateUtils.getForList(template, urlGeneral + CUENTA_CONTABLE_FIND_ALL_PATH, CuentaContableDomain.class);
+        return RestTemplateUtils.getForList(template, urlGeneral + CUENTA_CONTABLE_FIND_ALL_PATH, map, CuentaContableDomain.class);
     }
 
     @Override
     public List<CuentaContableDomain> findAll(String text) throws Exception {
         Map<String, Object> map = new HashMap<>();
         map.put(SEARCH_TEXT, text);
-        return RestTemplateUtils.getForList(template, urlGeneral + CUENTA_CONTABLE_FIND_ALL_SEARCH_PATH, CuentaContableDomain.class);
+        return RestTemplateUtils.getForList(template, urlGeneral + CUENTA_CONTABLE_FIND_ALL_SEARCH_PATH, map, CuentaContableDomain.class);
     }
 }

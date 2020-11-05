@@ -29,7 +29,7 @@ public class TipoCuentaRepoImpl extends ConsumerRepoTemplate<TipoCuentaDomain> i
     public List<TipoCuentaDomain> findAllCuadre(TipoCuentaDomain selectedItem) throws Exception {
         Map<String, Object> map = new HashMap<>();
         map.put(TIPO_CUENTA, selectedItem);
-        return RestTemplateUtils.getForList(template, urlGeneral + TIPO_CUENTA_FIND_ALL_CUADRE_PATH, TipoCuentaDomain.class);
+        return RestTemplateUtils.getForList(template, urlGeneral + TIPO_CUENTA_FIND_ALL_CUADRE_PATH, map, TipoCuentaDomain.class);
     }
 
 }

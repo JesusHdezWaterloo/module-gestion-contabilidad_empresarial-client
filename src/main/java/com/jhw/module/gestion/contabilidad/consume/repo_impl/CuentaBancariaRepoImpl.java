@@ -39,6 +39,6 @@ public class CuentaBancariaRepoImpl extends ConsumerRepoTemplate<CuentaBancariaD
     public List<CuentaBancariaDomain> findAll(String searchText) throws Exception {
         Map<String, Object> map = new HashMap<>();
         map.put(SEARCH_TEXT, searchText);
-        return RestTemplateUtils.getForList(template, urlGeneral + CUENTA_BANCARIA_FIND_ALL_SEARCH_PATH, CuentaBancariaDomain.class);
+        return RestTemplateUtils.getForList(template, urlGeneral + CUENTA_BANCARIA_FIND_ALL_SEARCH_PATH, map, CuentaBancariaDomain.class);
     }
 }

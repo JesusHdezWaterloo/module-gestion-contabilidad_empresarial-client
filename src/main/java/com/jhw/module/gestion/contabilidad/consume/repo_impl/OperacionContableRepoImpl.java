@@ -29,7 +29,7 @@ public class OperacionContableRepoImpl extends ConsumerRepoTemplate<OperacionCon
     public List<OperacionContableDomain> findAll(CuentaContableDomain cuenta) throws Exception {
         Map<String, Object> map = new HashMap<>();
         map.put(CUENTA, cuenta);
-        return RestTemplateUtils.getForList(template, urlGeneral + OPERACION_CONTABLE_FIND_ALL_PATH, OperacionContableDomain.class);
+        return RestTemplateUtils.getForList(template, urlGeneral + OPERACION_CONTABLE_FIND_ALL_PATH, map, OperacionContableDomain.class);
     }
 
 }

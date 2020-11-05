@@ -15,9 +15,9 @@ import com.jhw.utils.spring.client.ConsumerRepoTemplate;
  *
  * @author Jesus Hernandez Barrios (jhernandezb96@gmail.com)
  */
-public class TipoOperacionRepoImpl extends ConsumerRepoTemplate<TipoOperacionContableDomain> implements TipoOperacionContableUseCase {
+public class TipoOperacionContableRepoImpl extends ConsumerRepoTemplate<TipoOperacionContableDomain> implements TipoOperacionContableUseCase {
 
-    public TipoOperacionRepoImpl() {
+    public TipoOperacionContableRepoImpl() {
         super(RESTHandler.restTemplate(), TipoOperacionContableDomain.class, RESTHandler.urlActualREST() + TIPO_OPERACION_GENERAL_PATH);
     }
 

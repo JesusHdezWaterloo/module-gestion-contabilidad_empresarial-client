@@ -16,11 +16,11 @@ import java.util.List;
  *
  * @author Jesus Hernandez Barrios (jhernandezb96@gmail.com)
  */
-public class CuentaBancariaUseCaseImpl extends DefaultCRUDUseCase<CuentaBancariaDomain> implements CuentaBancariaUseCaseConsume {
+public class CuentaContableUseCaseImpl extends DefaultCRUDUseCase<CuentaContableDomain> implements CuentaContableUseCaseConsume {
 
-    private final CuentaBancariaRepoImpl repoUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(CuentaBancariaRepoImpl.class);
+    private final CuentaContableRepoImpl repoUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(CuentaContableRepoImpl.class);
 
-    public CuentaBancariaUseCaseImpl() {
+    public CuentaContableUseCaseImpl() {
         setRepo(repoUC);
     }
 
@@ -30,13 +30,13 @@ public class CuentaBancariaUseCaseImpl extends DefaultCRUDUseCase<CuentaBancaria
     }
 
     @Override
-    public CuentaBancariaDomain findCuentaDefault(MonedaDomain moneda) throws Exception {
-        return repoUC.findCuentaDefault(moneda);
+    public List<CuentaContableDomain> findAllCuenta(TipoCuentaDomain tipo) throws Exception {
+        return repoUC.findAllCuenta(tipo);
     }
 
     @Override
-    public List<CuentaBancariaDomain> findAll(String searchText) throws Exception {
-        return repoUC.findAll(searchText);
+    public List<CuentaContableDomain> findAll(String text) throws Exception {
+        return repoUC.findAll(text);
     }
 
 }

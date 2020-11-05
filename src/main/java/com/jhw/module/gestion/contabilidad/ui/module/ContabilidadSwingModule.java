@@ -40,7 +40,6 @@ public class ContabilidadSwingModule extends DefaultAbstractSwingMainModule {
     public final static LiquidacionUseCase liquicadionUC;
     public final static MonedaUseCase monedaUC;
     public final static OperacionContableUseCase operacionContableUC;
-    public final static SubcuentaUseCase subcuentaUC;
     public final static TipoCuentaUseCase tipoCuentaUC;
     public final static TipoOperacionContableUseCase tipoOperacionContableUC;
     public final static FormaPagoUseCase formaPagoUC;
@@ -57,7 +56,6 @@ public class ContabilidadSwingModule extends DefaultAbstractSwingMainModule {
         formaPagoUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(FormaPagoUseCase.class);
         monedaUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(MonedaUseCase.class);
         operacionContableUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(OperacionContableUseCase.class);
-        subcuentaUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(SubcuentaUseCase.class);
         tipoCuentaUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(TipoCuentaUseCase.class);
         tipoOperacionContableUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(TipoOperacionContableUseCase.class);
         titularUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(TitularUseCase.class);

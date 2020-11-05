@@ -5,6 +5,7 @@
  */
 package com.jhw.module.gestion.contabilidad.consume.usecase_impl;
 
+import com.clean.core.app.services.ExceptionHandler;
 import com.clean.core.app.usecase.*;
 import com.jhw.module.gestion.contabilidad.consume.module.ContabilidadConsumeCoreModule;
 import com.jhw.module.gestion.contabilidad.consume.repo_impl.*;
@@ -19,6 +20,8 @@ public class MonedaUseCaseImpl extends DefaultCRUDUseCase<MonedaDomain> implemen
 
     private final MonedaRepoImpl repoUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(MonedaRepoImpl.class);
 
+    private MonedaDomain base = null;
+
     public MonedaUseCaseImpl() {
         setRepo(repoUC);
     }
@@ -26,6 +29,18 @@ public class MonedaUseCaseImpl extends DefaultCRUDUseCase<MonedaDomain> implemen
     @Override
     public MonedaDomain findMonedaBase() throws Exception {
         return repoUC.findMonedaBase();
+    }
+
+    @Override
+    public MonedaDomain getMonedaBase() {
+        if (base == null) {
+            try {
+                base = findMonedaBase();
+            } catch (Exception e) {
+                ExceptionHandler.handleException(e);
+            }
+        }
+        return base;
     }
 
 }

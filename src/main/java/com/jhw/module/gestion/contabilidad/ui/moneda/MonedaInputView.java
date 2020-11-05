@@ -6,7 +6,6 @@ import com.jhw.swing.material.components.container.layout.VerticalLayoutContaine
 import com.jhw.swing.models.clean.CleanCRUDInputView;
 import com.jhw.module.gestion.contabilidad.core.domain.MonedaDomain;
 import com.jhw.module.gestion.contabilidad.ui.module.ContabilidadSwingModule;
-import com.jhw.module.gestion.contabilidad.utils.MonedaHandler;
 import com.jhw.swing.material.components.textarea.MaterialTextArea;
 import com.jhw.swing.prepared.textarea.MaterialPreparedTextAreaFactory;
 import com.jhw.swing.material.components.textfield.MaterialFormatedTextFieldIcon;
@@ -81,8 +80,8 @@ public class MonedaInputView extends CleanCRUDInputView<MonedaDomain> {
 
     private void personalize() {
         try {
-            textFieldCompra.setExtra(MonedaHandler.getMonedaBase().getNombreMoneda());
-            textFieldVenta.setExtra(MonedaHandler.getMonedaBase().getNombreMoneda());
+            textFieldCompra.setExtra(ContabilidadSwingModule.monedaUC.getMonedaBase().getNombreMoneda());
+            textFieldVenta.setExtra(ContabilidadSwingModule.monedaUC.getMonedaBase().getNombreMoneda());
         } catch (Exception e) {
         }
     }

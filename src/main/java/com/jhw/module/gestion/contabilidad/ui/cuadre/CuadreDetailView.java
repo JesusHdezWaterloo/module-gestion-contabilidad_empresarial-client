@@ -18,7 +18,7 @@ import com.jhw.swing.material.standards.MaterialColors;
 import com.jhw.swing.material.standards.MaterialIcons;
 import com.jhw.swing.models.input.dialogs.DialogModelInput;
 import com.jhw.swing.models.detail._MaterialPanelDetail;
-import com.jhw.utils.others.SDF;
+import com.jhw.utils.others.DTF;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 import javax.swing.JPanel;
@@ -86,7 +86,7 @@ public class CuadreDetailView extends _MaterialPanelDetail<CuadreDomain> {
             getLiquidado(obj),
             obj.info().getDocumento(),
             obj.info().getNombre(),
-            SDF.SDF.format(obj.info().getFecha()),
+            DTF.LOCAL_DATE_FORMATTER.format(obj.info().getFecha()),
             obj.getOperacionContableFk().getCuentaFk(),
             MoneyTableComponent.from(obj.getOperacionContableFk().getDebito(), obj.getOperacionContableFk().getCuentaFk().getMonedaFk()),
             MoneyTableComponent.from(obj.getOperacionContableFk().getCredito(), obj.getOperacionContableFk().getCuentaFk().getMonedaFk()),

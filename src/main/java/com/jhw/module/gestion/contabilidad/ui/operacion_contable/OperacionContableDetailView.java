@@ -10,7 +10,7 @@ import com.jhw.swing.material.components.table.editors_renders.money.MoneyCellRe
 import com.jhw.swing.material.components.table.editors_renders.money.MoneyTableComponent;
 import com.jhw.swing.models.detail._MaterialPanelDetail;
 import com.jhw.swing.util.Utils;
-import com.jhw.utils.others.SDF;
+import com.jhw.utils.others.DTF;
 import java.awt.Dimension;
 import java.awt.Rectangle;
 
@@ -86,7 +86,7 @@ public class OperacionContableDetailView extends _MaterialPanelDetail<OperacionC
             obj.getInfoOperacionContableFk().getNombre(),
             MoneyTableComponent.from(obj.getDebito(), obj.getCuentaFk().getMonedaFk()),
             MoneyTableComponent.from(obj.getCredito(), obj.getCuentaFk().getMonedaFk()),
-            SDF.SDF.format(obj.getInfoOperacionContableFk().getFecha()),
+            DTF.LOCAL_DATE_FORMATTER.format(obj.getInfoOperacionContableFk().getFecha()),
             obj.getCuentaFk()
         };
     }

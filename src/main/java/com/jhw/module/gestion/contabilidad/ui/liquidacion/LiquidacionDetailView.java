@@ -11,7 +11,7 @@ import com.jhw.swing.material.components.table.editors_renders.money.MoneyTableC
 import com.jhw.swing.models.input.dialogs.DialogModelInput;
 import com.jhw.swing.models.detail._MaterialPanelDetail;
 import com.jhw.swing.util.Utils;
-import com.jhw.utils.others.SDF;
+import com.jhw.utils.others.DTF;
 import java.awt.Dimension;
 import java.awt.Rectangle;
 
@@ -95,7 +95,7 @@ public class LiquidacionDetailView extends _MaterialPanelDetail<LiquidacionDomai
             obj.getNombre(),
             MoneyTableComponent.from(obj.getDebito(), obj.getCuentaFk().getMonedaFk()),
             MoneyTableComponent.from(obj.getCredito(), obj.getCuentaFk().getMonedaFk()),
-            SDF.SDF.format(obj.getFecha()),
+            DTF.LOCAL_DATE_FORMATTER.format(obj.getFecha()),
             obj.getCuadreFk(),
             obj.getCuentaFk()
         };

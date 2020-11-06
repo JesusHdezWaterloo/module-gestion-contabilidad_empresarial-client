@@ -26,7 +26,7 @@ public class MainTest {
         ContabilidadSwingModule.init();
         
         System.out.println("antes");
-        System.out.println(ContabilidadSwingModule.monedaUC.findAll().get(0).getVenta());
+        System.out.println(ContabilidadSwingModule.cuadreUC.findAll());
         System.out.println("ya");
     }
 }

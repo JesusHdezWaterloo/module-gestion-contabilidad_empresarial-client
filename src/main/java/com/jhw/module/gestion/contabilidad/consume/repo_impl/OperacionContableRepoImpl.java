@@ -25,10 +25,22 @@ public class OperacionContableRepoImpl extends ConsumerRepoTemplate<OperacionCon
         super(RESTHandler.restTemplate(), OperacionContableDomain.class, RESTHandler.urlActualREST() + OPERACION_CONTABLE_GENERAL_PATH);
     }
 
+    /**
+     * Delegate a findAll(Integer idCuentaContable) para lightweight
+     *
+     * @param cuenta
+     * @return
+     * @throws Exception
+     */
     @Override
     public List<OperacionContableDomain> findAll(CuentaContableDomain cuenta) throws Exception {
+        return findAll(cuenta.getIdCuentaContable());
+    }
+
+    @Override
+    public List<OperacionContableDomain> findAll(Integer idCuentaContable) throws Exception {
         Map<String, Object> map = new HashMap<>();
-        map.put(CUENTA, cuenta);
+        map.put(CUENTA, idCuentaContable);
         return RestTemplateUtils.getForList(template, urlGeneral + OPERACION_CONTABLE_FIND_ALL_PATH, map, OperacionContableDomain.class);
     }
 

@@ -28,10 +28,22 @@ public class CuentaContableRepoImpl extends ConsumerRepoTemplate<CuentaContableD
         return RestTemplateUtils.getForList(template, urlGeneral + CUENTA_CONTABLE_FIND_ALL_CUENTAS_PATH, Cuenta.class);
     }
 
+    /**
+     * Delegate to findAllCuenta(Integer idTipoCuenta) para lightweight
+     *
+     * @param tipo
+     * @return
+     * @throws Exception
+     */
     @Override
     public List<CuentaContableDomain> findAllCuenta(TipoCuentaDomain tipo) throws Exception {
+        return findAllCuenta(tipo.getIdTipoCuenta());
+    }
+
+    @Override
+    public List<CuentaContableDomain> findAllCuenta(Integer idTipoCuenta) throws Exception {
         Map<String, Object> map = new HashMap<>();
-        map.put(TIPO_CUENTA, tipo);
+        map.put(TIPO_CUENTA, idTipoCuenta);
         return RestTemplateUtils.getForList(template, urlGeneral + CUENTA_CONTABLE_FIND_ALL_PATH, map, CuentaContableDomain.class);
     }
 

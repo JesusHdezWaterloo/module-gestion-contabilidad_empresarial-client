@@ -55,7 +55,7 @@ public class LiquidacionInputView extends CleanCRUDInputView<LiquidacionDomain> 
         textFieldNombre.setIcon(MaterialIcons.PRIORITY_HIGH);
 
         //documento
-        textFieldDocumento= MaterialTextFactory.buildIcon();
+        textFieldDocumento = MaterialTextFactory.buildIcon();
         textFieldDocumento.setLabel("Documento");
         textFieldDocumento.setHint("Factura o Transacción asociada");
         textFieldDocumento.setIcon(MaterialIcons.DRAFTS);
@@ -65,7 +65,7 @@ public class LiquidacionInputView extends CleanCRUDInputView<LiquidacionDomain> 
         labelDebitoValue.setText("Débito");
 
         //credito
-        labelCreditoValue  = MaterialLabelsFactory.buildDoubleMoneyNegative();
+        labelCreditoValue = MaterialLabelsFactory.buildDoubleMoneyNegative();
         labelCreditoValue.setText("Crédito");
 
         //fecha
@@ -107,6 +107,13 @@ public class LiquidacionInputView extends CleanCRUDInputView<LiquidacionDomain> 
     private CuadreICBS cuadreICBS;
     private MaterialTextArea textAreaDescripcion;
     // End of variables declaration                   
+
+    @Override
+    public LiquidacionDomain getNewModel() throws Exception {
+        LiquidacionDomain liq = super.getNewModel();
+        liq.setCuadreFk(liq.getCuadreFk());
+        return liq;
+    }
 
     @Override
     public void update() {

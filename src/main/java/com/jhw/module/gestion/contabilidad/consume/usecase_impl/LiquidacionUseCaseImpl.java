@@ -30,8 +30,18 @@ public class LiquidacionUseCaseImpl extends DefaultCRUDUseCase<LiquidacionDomain
     }
 
     @Override
+    public List<LiquidacionDomain> findAll(Integer IdCuentaBancaria) throws Exception {
+        return repoUC.findAll(IdCuentaBancaria);
+    }
+
+    @Override
     public LiquidacionDomain getLiquidacion(CuadreDomain cuadre) throws Exception {
         return repoUC.getLiquidacion(cuadre);
+    }
+
+    @Override
+    public LiquidacionDomain getLiquidacion(Integer idCuadre) throws Exception {
+        return repoUC.getLiquidacion(idCuadre);
     }
 
 }

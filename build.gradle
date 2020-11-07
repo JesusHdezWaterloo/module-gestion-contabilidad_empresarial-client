@@ -9,7 +9,7 @@ repositories {
     mavenCentral()
 }
 
-version = '3.0.0.SNAPSHOT.20201104'
+version = '3.1.0.SNAPSHOT.20201106'
 
 dependencies {
     compile group: 'org.springframework', name: 'spring-web', version: '5.2.9.RELEASE'

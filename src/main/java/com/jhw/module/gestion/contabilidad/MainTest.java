@@ -26,7 +26,7 @@ public class MainTest {
         ContabilidadSwingModule.init();
         
         System.out.println("antes");
-        System.out.println(ContabilidadSwingModule.cuadreUC.findByLiquidada(true));
+        System.out.println(ContabilidadSwingModule.cuadreUC.findAll());
         System.out.println("ya");
     }
 }

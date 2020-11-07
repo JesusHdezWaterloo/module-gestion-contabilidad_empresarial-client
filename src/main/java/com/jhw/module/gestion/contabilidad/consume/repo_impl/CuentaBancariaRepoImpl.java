@@ -28,10 +28,23 @@ public class CuentaBancariaRepoImpl extends ConsumerRepoTemplate<CuentaBancariaD
         return RestTemplateUtils.getForList(template, urlGeneral + CUENTA_BANCARIA_FIND_ALL_CUENTAS_PATH, Cuenta.class);
     }
 
+    /**
+     * Delegate to findCuentaDefault(Integer idMoneda) para      * Delegate to findAllCuenta(Integer idTipoCuenta) para lightweight
+
+     *
+     * @param moneda
+     * @return
+     * @throws Exception
+     */
     @Override
     public CuentaBancariaDomain findCuentaDefault(MonedaDomain moneda) throws Exception {
+        return findCuentaDefault(moneda.getIdMoneda());
+    }
+
+    @Override
+    public CuentaBancariaDomain findCuentaDefault(Integer idMoneda) throws Exception {
         Map<String, Object> map = new HashMap<>();
-        map.put(MONEDA, moneda);
+        map.put(MONEDA, idMoneda);
         return template.getForObject(urlGeneral + CUENTA_BANCARIA_FIND_DEFAULT_PATH, CuentaBancariaDomain.class, map);
     }
 
@@ -39,6 +52,7 @@ public class CuentaBancariaRepoImpl extends ConsumerRepoTemplate<CuentaBancariaD
     public List<CuentaBancariaDomain> findAll(String searchText) throws Exception {
         Map<String, Object> map = new HashMap<>();
         map.put(SEARCH_TEXT, searchText);
-        return RestTemplateUtils.getForList(template, urlGeneral + CUENTA_BANCARIA_FIND_ALL_SEARCH_PATH, CuentaBancariaDomain.class);
+        return RestTemplateUtils.getForList(template, urlGeneral + CUENTA_BANCARIA_FIND_ALL_SEARCH_PATH, map, CuentaBancariaDomain.class);
     }
+
 }

@@ -25,17 +25,34 @@ public class LiquidacionRepoImpl extends ConsumerRepoTemplate<LiquidacionDomain>
         super(RESTHandler.restTemplate(), LiquidacionDomain.class, RESTHandler.urlActualREST() + LIQUIDACION_GENERAL_PATH);
     }
 
+    /**
+     * Delegate to findAll(Integer IdCuentaBancaria) para lightweight
+     *
+     * @param cuenta
+     * @return
+     * @throws Exception
+     */
     @Override
     public List<LiquidacionDomain> findAll(CuentaBancariaDomain cuenta) throws Exception {
+        return findAll(cuenta.getIdCuentaBancaria());
+    }
+
+    @Override
+    public List<LiquidacionDomain> findAll(Integer IdCuentaBancaria) throws Exception {
         Map<String, Object> map = new HashMap<>();
-        map.put(CUENTA, cuenta);
-        return RestTemplateUtils.getForList(template, urlGeneral + LIQUIDACION_FIND_ALL_PATH, LiquidacionDomain.class);
+        map.put(CUENTA, IdCuentaBancaria);
+        return RestTemplateUtils.getForList(template, urlGeneral + LIQUIDACION_FIND_ALL_PATH, map, LiquidacionDomain.class);
     }
 
     @Override
     public LiquidacionDomain getLiquidacion(CuadreDomain cuadre) throws Exception {
+        return getLiquidacion(cuadre.getIdCuadre());
+    }
+
+    @Override
+    public LiquidacionDomain getLiquidacion(Integer idCuadre) throws Exception {
         Map<String, Object> map = new HashMap<>();
-        map.put(CUADRE, cuadre);
+        map.put(CUADRE, idCuadre);
         return template.getForObject(urlGeneral + LIQUIDACION_GET_PATH, LiquidacionDomain.class, map);
     }
 

@@ -35,6 +35,11 @@ public class CuentaContableUseCaseImpl extends DefaultCRUDUseCase<CuentaContable
     }
 
     @Override
+    public List<CuentaContableDomain> findAllCuenta(Integer idTipoCuenta) throws Exception {
+        return repoUC.findAllCuenta(idTipoCuenta);
+    }
+
+    @Override
     public List<CuentaContableDomain> findAll(String text) throws Exception {
         return repoUC.findAll(text);
     }

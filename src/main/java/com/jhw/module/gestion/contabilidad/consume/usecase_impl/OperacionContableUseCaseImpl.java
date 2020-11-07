@@ -29,4 +29,9 @@ public class OperacionContableUseCaseImpl extends DefaultCRUDUseCase<OperacionCo
         return repoUC.findAll(cuenta);
     }
 
+    @Override
+    public List<OperacionContableDomain> findAll(Integer idCuentaContable) throws Exception {
+        return repoUC.findAll(idCuentaContable);
+    }
+
 }

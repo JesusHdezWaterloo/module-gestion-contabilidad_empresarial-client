@@ -29,4 +29,9 @@ public class TipoCuentaUseCaseImpl extends DefaultCRUDUseCase<TipoCuentaDomain> 
         return repoUC.findAllCuadre(selectedItem);
     }
 
+    @Override
+    public List<TipoCuentaDomain> findAllCuadre(Integer idTipoCuenta) throws Exception {
+        return repoUC.findAllCuadre(idTipoCuenta);
+    }
+
 }

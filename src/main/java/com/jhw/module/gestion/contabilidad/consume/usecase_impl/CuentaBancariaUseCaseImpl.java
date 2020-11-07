@@ -35,8 +35,12 @@ public class CuentaBancariaUseCaseImpl extends DefaultCRUDUseCase<CuentaBancaria
     }
 
     @Override
+    public CuentaBancariaDomain findCuentaDefault(Integer idMoneda) throws Exception {
+        return repoUC.findCuentaDefault(idMoneda);
+    }
+
+    @Override
     public List<CuentaBancariaDomain> findAll(String searchText) throws Exception {
         return repoUC.findAll(searchText);
     }
-
 }

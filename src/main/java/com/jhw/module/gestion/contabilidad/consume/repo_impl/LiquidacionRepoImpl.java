@@ -46,14 +46,14 @@ public class LiquidacionRepoImpl extends ConsumerRepoTemplate<LiquidacionDomain>
 
     @Override
     public LiquidacionDomain getLiquidacion(CuadreDomain cuadre) throws Exception {
-        Map<String, Object> map = new HashMap<>();
-        map.put(CUADRE, cuadre);
-        return template.getForObject(urlGeneral + LIQUIDACION_GET_PATH, LiquidacionDomain.class, map);
+        return getLiquidacion(cuadre.getIdCuadre());
     }
 
     @Override
     public LiquidacionDomain getLiquidacion(Integer idCuadre) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Map<String, Object> map = new HashMap<>();
+        map.put(CUADRE, idCuadre);
+        return template.getForObject(urlGeneral + LIQUIDACION_GET_PATH, LiquidacionDomain.class, map);
     }
 
 }

@@ -58,7 +58,7 @@ public class LiquidacionDetailView extends _MaterialPanelDetail<LiquidacionDomai
         String cuentaStr = cuenta == null ? "" : ": " + cuenta.toString();
         this.setHeaderText("Liquidaciones" + cuentaStr);
         this.setIcon(ContabilidadModuleNavigator.ICON_LIQUIDACIONES);
-        this.setButtonAddVisibility(false);
+
         this.setActionColumnButtonsVisivility(true, true, false);//no pone el view, no esta implementado todavia
         changeSize();
         

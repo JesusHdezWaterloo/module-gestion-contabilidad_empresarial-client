@@ -4,12 +4,12 @@ plugins {
 
 group = 'com.jhw.module.gestion'
 
+version = '3.1.1.SNAPSHOT.20201125'
+
 repositories {
     jcenter()
     mavenCentral()
 }
-
-version = '3.1.0.SNAPSHOT.20201106'
 
 dependencies {
     compile group: 'org.springframework', name: 'spring-web', version: '5.2.9.RELEASE'

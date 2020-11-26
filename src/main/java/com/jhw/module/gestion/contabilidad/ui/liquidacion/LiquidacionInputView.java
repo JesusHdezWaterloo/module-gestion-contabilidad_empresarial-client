@@ -55,7 +55,7 @@ public class LiquidacionInputView extends CleanCRUDInputView<LiquidacionDomain> 
         textFieldNombre.setIcon(MaterialIcons.PRIORITY_HIGH);
 
         //documento
-        textFieldDocumento= MaterialTextFactory.buildIcon();
+        textFieldDocumento = MaterialTextFactory.buildIcon();
         textFieldDocumento.setLabel("Documento");
         textFieldDocumento.setHint("Factura o Transacción asociada");
         textFieldDocumento.setIcon(MaterialIcons.DRAFTS);
@@ -65,7 +65,7 @@ public class LiquidacionInputView extends CleanCRUDInputView<LiquidacionDomain> 
         labelDebitoValue.setText("Débito");
 
         //credito
-        labelCreditoValue  = MaterialLabelsFactory.buildDoubleMoneyNegative();
+        labelCreditoValue = MaterialLabelsFactory.buildDoubleMoneyNegative();
         labelCreditoValue.setText("Crédito");
 
         //fecha
@@ -109,12 +109,30 @@ public class LiquidacionInputView extends CleanCRUDInputView<LiquidacionDomain> 
     // End of variables declaration                   
 
     @Override
+    public LiquidacionDomain getNewModel() throws Exception {
+        LiquidacionDomain liq = super.getNewModel();
+        liq.setCuadreFk(liq.getCuadreFk());
+        return liq;
+    }
+
+    @Override
     public void update() {
         super.update();
         cuadreICBS.setEnabled(getBase() == null);
-        if (getBase() == null) {
+
+        if (getBase() == null && getOldModel() == null) {
             labelCreditoValue.setMoney(BigDecimal.ZERO, "");//en el edit se actualizan por el get selected del cuadreICBS
             labelDebitoValue.setMoney(BigDecimal.ZERO, "");
+        }
+
+        /**
+         * Actualiza el combo box de cuadre, por defecto no agrega el cuadre xq
+         * esta liquidado, hay que agregarlo a mano, seleccionarlo, y actualizar
+         * los labels de debito y credito que se hacen auto con el setObject
+         */
+        if (getOldModel() != null) {
+            cuadreICBS.addElement(getOldModel().getCuadreFk());
+            cuadreICBS.setObject(getOldModel().getCuadreFk());
         }
     }
 

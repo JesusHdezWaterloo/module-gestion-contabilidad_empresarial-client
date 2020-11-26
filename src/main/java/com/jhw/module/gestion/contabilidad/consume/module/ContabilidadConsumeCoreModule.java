@@ -3,6 +3,7 @@ package com.jhw.module.gestion.contabilidad.consume.module;
 import com.clean.core.app.modules.DefaultAbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+import com.jhw.module.gestion.contabilidad.service.ResourceServiceImplementation;
 
 /**
  * Modulo de Contabilidad_Empresarial-consume-core.
@@ -17,14 +18,14 @@ public class ContabilidadConsumeCoreModule extends DefaultAbstractModule {
 
     public static ContabilidadConsumeCoreModule getInstance() {
         if (INSTANCE == null) {
-            throw new NullPointerException("El modulo de Contabilidad_Empresarial Consume-Core no se ha inicializado");
+            init();
         }
         return INSTANCE;
     }
 
-    public static ContabilidadConsumeCoreModule init() {
+    private static void init() {
         INSTANCE = new ContabilidadConsumeCoreModule();
-        return getInstance();
+        ResourceServiceImplementation.init();
     }
 
     @Override

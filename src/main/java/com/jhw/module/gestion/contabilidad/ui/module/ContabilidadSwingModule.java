@@ -35,8 +35,6 @@ public class ContabilidadSwingModule extends DefaultAbstractSwingMainModule {
     public final static TitularUseCaseConsume titularUC;
 
     static {
-        ContabilidadConsumeCoreModule.init();
-
         cuadreUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(CuadreUseCaseConsume.class);
         cuentaBancariaUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(CuentaBancariaUseCaseConsume.class);
         cuentaContableUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(CuentaContableUseCaseConsume.class);
@@ -48,8 +46,6 @@ public class ContabilidadSwingModule extends DefaultAbstractSwingMainModule {
         tipoCuentaUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(TipoCuentaUseCaseConsume.class);
         tipoOperacionContableUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(TipoOperacionContableUseCaseConsume.class);
         titularUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(TitularUseCaseConsume.class);
-
-        ResourceServiceImplementation.init();
     }
 
     private ContabilidadSwingModule() {

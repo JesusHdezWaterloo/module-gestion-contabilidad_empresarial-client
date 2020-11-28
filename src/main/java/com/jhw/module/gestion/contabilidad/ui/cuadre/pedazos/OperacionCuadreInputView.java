@@ -82,6 +82,11 @@ public class OperacionCuadreInputView extends CleanCRUDInputView<OperacionCuadre
     // End of variables declaration                   
 
     @Override
+    protected boolean doValidate() {
+        return true;
+    }
+
+    @Override
     public void setObject(OperacionCuadreUI t) {
         setOldModel(t);
         update();

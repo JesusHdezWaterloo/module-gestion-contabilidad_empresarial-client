@@ -3,7 +3,7 @@ package com.jhw.module.gestion.contabilidad.consume.module;
 import com.clean.core.app.modules.DefaultAbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import com.jhw.module.gestion.contabilidad.service.ResourceServiceImplementation;
+import com.jhw.module.gestion.contabilidad.service.ResourceServiceClientImplementation;
 
 /**
  * Modulo de Contabilidad_Empresarial-consume-core.
@@ -25,7 +25,7 @@ public class ContabilidadConsumeCoreModule extends DefaultAbstractModule {
 
     private static void init() {
         INSTANCE = new ContabilidadConsumeCoreModule();
-        ResourceServiceImplementation.init();
+        ResourceServiceClientImplementation.init();
     }
 
     @Override

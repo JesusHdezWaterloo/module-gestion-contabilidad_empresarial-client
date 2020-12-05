@@ -21,9 +21,4 @@ public class TipoOperacionContableRepoImpl extends ConsumerRepoTemplate<TipoOper
         super(RESTHandler.restTemplate(), TipoOperacionContableDomain.class, RESTHandler.urlActualREST() + TIPO_OPERACION_GENERAL_PATH);
     }
 
-    @Override
-    public TipoOperacionContableDomain findByKey(String key) {
-        return template.getForObject(urlGeneral + TIPO_OPERACION_PATH_FIND_BY_PATH, TipoOperacionContableDomain.class);
-    }
-
 }

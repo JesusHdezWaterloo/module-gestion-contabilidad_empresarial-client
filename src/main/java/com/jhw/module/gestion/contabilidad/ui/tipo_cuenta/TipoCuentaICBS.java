@@ -19,12 +19,13 @@ public class TipoCuentaICBS extends InputComboBoxSelection<TipoCuentaDomain> {
     }
 
     @Override
-    public List<TipoCuentaDomain> getList() throws Exception{
+    public List<TipoCuentaDomain> getList() throws Exception {
         return ContabilidadSwingModule.tipoCuentaUC.findAll();
     }
 
-    public void updateComboBoxCuadre(TipoCuentaDomain selectedItem) throws Exception {
-        setUpList(ContabilidadSwingModule.tipoCuentaUC.findAllCuadre(selectedItem));
+    public void updateComboBoxEquivalent(TipoCuentaDomain selectedItem) throws Exception {
+        setUpList(ContabilidadSwingModule.tipoCuentaUC.findAllEquivalent(selectedItem));
+        setObject(selectedItem);
     }
 
     @Override

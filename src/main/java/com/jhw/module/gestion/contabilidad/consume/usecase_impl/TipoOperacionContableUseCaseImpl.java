@@ -23,9 +23,4 @@ public class TipoOperacionContableUseCaseImpl extends DefaultCRUDUseCase<TipoOpe
         setRepo(repoUC);
     }
 
-    @Override
-    public TipoOperacionContableDomain findByKey(String key) {
-        return repoUC.findByKey(key);
-    }
-
 }

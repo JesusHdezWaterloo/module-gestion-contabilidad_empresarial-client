@@ -6,6 +6,7 @@ import com.clean.swing.app.dashboard.DashBoardSimple;
 import com.clean.swing.app.dashboard.DashboardConstants;
 import com.jhw.module.gestion.contabilidad.consume.module.ContabilidadConsumeCoreModule;
 import com.jhw.module.gestion.contabilidad.consume.usecase_def.*;
+import com.jhw.module.gestion.contabilidad.service.ResourceServiceClientImplementation;
 import com.jhw.module.gestion.contabilidad.service.ResourceServiceImplementation;
 import com.jhw.module.gestion.contabilidad.ui.cuadre.CuadreDetailView;
 import com.jhw.module.gestion.contabilidad.ui.cuenta.CuentasMainPanel;
@@ -35,8 +36,6 @@ public class ContabilidadSwingModule extends DefaultAbstractSwingMainModule {
     public final static TitularUseCaseConsume titularUC;
 
     static {
-        ContabilidadConsumeCoreModule.init();
-
         cuadreUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(CuadreUseCaseConsume.class);
         cuentaBancariaUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(CuentaBancariaUseCaseConsume.class);
         cuentaContableUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(CuentaContableUseCaseConsume.class);
@@ -48,20 +47,21 @@ public class ContabilidadSwingModule extends DefaultAbstractSwingMainModule {
         tipoCuentaUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(TipoCuentaUseCaseConsume.class);
         tipoOperacionContableUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(TipoOperacionContableUseCaseConsume.class);
         titularUC = ContabilidadConsumeCoreModule.getInstance().getImplementation(TitularUseCaseConsume.class);
-
-        ResourceServiceImplementation.init();
     }
 
     private ContabilidadSwingModule() {
     }
 
     public static ContabilidadSwingModule init() {
+        System.out.println("Iniciando 'Cuentas'");
+        ResourceServiceClientImplementation.init();
+        ResourceServiceImplementation.init();
+
         return new ContabilidadSwingModule();
     }
 
     @Override
     public void register(AbstractSwingApplication app) {
-        System.out.println("Creando 'Cuentas'");
         registerMainElements(app);
     }
 

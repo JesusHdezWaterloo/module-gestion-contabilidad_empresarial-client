@@ -25,13 +25,13 @@ public class TipoCuentaUseCaseImpl extends DefaultCRUDUseCase<TipoCuentaDomain> 
     }
 
     @Override
-    public List<TipoCuentaDomain> findAllCuadre(TipoCuentaDomain selectedItem) throws Exception {
-        return repoUC.findAllCuadre(selectedItem);
+    public List<TipoCuentaDomain> findAllEquivalent(TipoCuentaDomain selectedItem) throws Exception {
+        return repoUC.findAllEquivalent(selectedItem);
     }
 
     @Override
-    public List<TipoCuentaDomain> findAllCuadre(Integer idTipoCuenta) throws Exception {
-        return repoUC.findAllCuadre(idTipoCuenta);
+    public List<TipoCuentaDomain> findAllEquivalent(Integer idTipoCuenta) throws Exception {
+        return repoUC.findAllEquivalent(idTipoCuenta);
     }
 
 }

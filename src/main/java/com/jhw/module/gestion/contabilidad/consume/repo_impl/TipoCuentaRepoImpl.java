@@ -26,22 +26,22 @@ public class TipoCuentaRepoImpl extends ConsumerRepoTemplate<TipoCuentaDomain> i
     }
 
     /**
-     * Delegate a findAllCuadre(Integer idTipoCuenta) para lightweight
+     * Delegate a findAllEquivalent(Integer idTipoCuenta) para lightweight
      *
      * @param tipoCuenta
      * @return
      * @throws Exception
      */
     @Override
-    public List<TipoCuentaDomain> findAllCuadre(TipoCuentaDomain tipoCuenta) throws Exception {
-        return findAllCuadre(tipoCuenta.getIdTipoCuenta());
+    public List<TipoCuentaDomain> findAllEquivalent(TipoCuentaDomain tipoCuenta) throws Exception {
+        return findAllEquivalent(tipoCuenta.getIdTipoCuenta());
     }
 
     @Override
-    public List<TipoCuentaDomain> findAllCuadre(Integer idTipoCuenta) throws Exception {
+    public List<TipoCuentaDomain> findAllEquivalent(Integer idTipoCuenta) throws Exception {
         Map<String, Object> map = new HashMap<>();
         map.put(TIPO_CUENTA, idTipoCuenta);
-        return RestTemplateUtils.getForList(template, urlGeneral + TIPO_CUENTA_FIND_ALL_CUADRE_PATH, map, TipoCuentaDomain.class);
+        return RestTemplateUtils.getForList(template, urlGeneral + TIPO_CUENTA_FIND_ALL_EQUIVALENT_PATH, map, TipoCuentaDomain.class);
     }
 
 }

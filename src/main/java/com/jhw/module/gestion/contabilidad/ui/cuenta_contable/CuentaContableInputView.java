@@ -1,5 +1,6 @@
 package com.jhw.module.gestion.contabilidad.ui.cuenta_contable;
 
+import com.clean.core.app.services.ExceptionHandler;
 import com.jhw.module.gestion.contabilidad.core.domain.CuentaContableDomain;
 import com.jhw.swing.material.components.container.layout.VerticalLayoutContainer;
 import com.jhw.swing.models.clean.CleanCRUDInputView;
@@ -88,7 +89,14 @@ public class CuentaContableInputView extends CleanCRUDInputView<CuentaContableDo
     public void update() {
         super.update();
         monedaICBS.setEnabled(getOldModel() == null);
-        tipoCuentaICBS.setEnabled(getOldModel() == null);
+        
+        if (getOldModel() != null) {
+            try {
+                tipoCuentaICBS.updateComboBoxEquivalent(getOldModel().getTipoCuentaFk());
+            } catch (Exception e) {
+                ExceptionHandler.handleException(e);
+            }
+        }
     }
 
     @Override

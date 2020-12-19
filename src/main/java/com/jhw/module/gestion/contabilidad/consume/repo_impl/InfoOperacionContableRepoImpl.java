@@ -10,6 +10,7 @@ import com.jhw.module.gestion.contabilidad.core.domain.*;
 import com.jhw.module.gestion.contabilidad.core.usecase_def.*;
 import com.jhw.module.util.rest_config.services.RESTHandler;
 import com.jhw.utils.spring.client.ConsumerRepoTemplate;
+import org.springframework.web.client.RestOperations;
 
 /**
  *
@@ -18,7 +19,11 @@ import com.jhw.utils.spring.client.ConsumerRepoTemplate;
 public class InfoOperacionContableRepoImpl extends ConsumerRepoTemplate<InfoOperacionContableDomain> implements InfoOperacionContableUseCase {
 
     public InfoOperacionContableRepoImpl() {
-        super(RESTHandler.restTemplate(), InfoOperacionContableDomain.class, RESTHandler.urlActualREST() + INFO_OP_CONTABLE_GENERAL_PATH);
+        super(InfoOperacionContableDomain.class, RESTHandler.urlActualREST() + INFO_OP_CONTABLE_GENERAL_PATH);
     }
 
+    @Override
+    protected RestOperations template() {
+        return RESTHandler.OAuth2RestTemplate();
+    }
 }

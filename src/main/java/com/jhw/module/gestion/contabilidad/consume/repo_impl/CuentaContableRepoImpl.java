@@ -12,6 +12,7 @@ import com.jhw.module.util.rest_config.services.RESTHandler;
 import com.jhw.utils.spring.client.ConsumerRepoTemplate;
 import com.jhw.utils.spring.client.RestTemplateUtils;
 import java.util.*;
+import org.springframework.web.client.RestOperations;
 
 /**
  *
@@ -20,12 +21,17 @@ import java.util.*;
 public class CuentaContableRepoImpl extends ConsumerRepoTemplate<CuentaContableDomain> implements CuentaContableUseCase {
 
     public CuentaContableRepoImpl() {
-        super(RESTHandler.restTemplate(), CuentaContableDomain.class, RESTHandler.urlActualREST() + CUENTA_CONTABLE_GENERAL_PATH);
+        super(CuentaContableDomain.class, RESTHandler.urlActualREST() + CUENTA_CONTABLE_GENERAL_PATH);
+    }
+
+    @Override
+    protected RestOperations template() {
+        return RESTHandler.OAuth2RestTemplate();
     }
 
     @Override
     public List<Cuenta> findAllCuentas() throws Exception {
-        return RestTemplateUtils.getForList(template, urlGeneral + CUENTA_CONTABLE_FIND_ALL_CUENTAS_PATH, Cuenta.class);
+        return RestTemplateUtils.getForList(template(), urlGeneral + CUENTA_CONTABLE_FIND_ALL_CUENTAS_PATH, Cuenta.class);
     }
 
     /**
@@ -44,13 +50,13 @@ public class CuentaContableRepoImpl extends ConsumerRepoTemplate<CuentaContableD
     public List<CuentaContableDomain> findAllCuenta(Integer idTipoCuenta) throws Exception {
         Map<String, Object> map = new HashMap<>();
         map.put(TIPO_CUENTA, idTipoCuenta);
-        return RestTemplateUtils.getForList(template, urlGeneral + CUENTA_CONTABLE_FIND_ALL_PATH, map, CuentaContableDomain.class);
+        return RestTemplateUtils.getForList(template(), urlGeneral + CUENTA_CONTABLE_FIND_ALL_PATH, map, CuentaContableDomain.class);
     }
 
     @Override
     public List<CuentaContableDomain> findAll(String text) throws Exception {
         Map<String, Object> map = new HashMap<>();
         map.put(SEARCH_TEXT, text);
-        return RestTemplateUtils.getForList(template, urlGeneral + CUENTA_CONTABLE_FIND_ALL_SEARCH_PATH, map, CuentaContableDomain.class);
+        return RestTemplateUtils.getForList(template(), urlGeneral + CUENTA_CONTABLE_FIND_ALL_SEARCH_PATH, map, CuentaContableDomain.class);
     }
 }

@@ -14,6 +14,7 @@ import com.jhw.utils.spring.client.RestTemplateUtils;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.springframework.web.client.RestOperations;
 
 /**
  *
@@ -22,7 +23,12 @@ import java.util.Map;
 public class LiquidacionRepoImpl extends ConsumerRepoTemplate<LiquidacionDomain> implements LiquidacionUseCase {
 
     public LiquidacionRepoImpl() {
-        super(RESTHandler.restTemplate(), LiquidacionDomain.class, RESTHandler.urlActualREST() + LIQUIDACION_GENERAL_PATH);
+        super(LiquidacionDomain.class, RESTHandler.urlActualREST() + LIQUIDACION_GENERAL_PATH);
+    }
+
+    @Override
+    protected RestOperations template() {
+        return RESTHandler.OAuth2RestTemplate();
     }
 
     /**
@@ -41,7 +47,7 @@ public class LiquidacionRepoImpl extends ConsumerRepoTemplate<LiquidacionDomain>
     public List<LiquidacionDomain> findAll(Integer IdCuentaBancaria) throws Exception {
         Map<String, Object> map = new HashMap<>();
         map.put(CUENTA, IdCuentaBancaria);
-        return RestTemplateUtils.getForList(template, urlGeneral + LIQUIDACION_FIND_ALL_PATH, map, LiquidacionDomain.class);
+        return RestTemplateUtils.getForList(template(), urlGeneral + LIQUIDACION_FIND_ALL_PATH, map, LiquidacionDomain.class);
     }
 
     @Override
@@ -53,7 +59,7 @@ public class LiquidacionRepoImpl extends ConsumerRepoTemplate<LiquidacionDomain>
     public LiquidacionDomain getLiquidacion(Integer idCuadre) throws Exception {
         Map<String, Object> map = new HashMap<>();
         map.put(CUADRE, idCuadre);
-        return template.getForObject(urlGeneral + LIQUIDACION_GET_PATH, LiquidacionDomain.class, map);
+        return template().getForObject(urlGeneral + LIQUIDACION_GET_PATH, LiquidacionDomain.class, map);
     }
 
 }

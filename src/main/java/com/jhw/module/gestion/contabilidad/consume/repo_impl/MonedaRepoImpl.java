@@ -10,6 +10,7 @@ import com.jhw.module.gestion.contabilidad.core.domain.*;
 import com.jhw.module.gestion.contabilidad.core.usecase_def.*;
 import com.jhw.module.util.rest_config.services.RESTHandler;
 import com.jhw.utils.spring.client.ConsumerRepoTemplate;
+import org.springframework.web.client.RestOperations;
 
 /**
  *
@@ -18,12 +19,17 @@ import com.jhw.utils.spring.client.ConsumerRepoTemplate;
 public class MonedaRepoImpl extends ConsumerRepoTemplate<MonedaDomain> implements MonedaUseCase {
 
     public MonedaRepoImpl() {
-        super(RESTHandler.restTemplate(), MonedaDomain.class, RESTHandler.urlActualREST() + MONEDA_GENERAL_PATH);
+        super(MonedaDomain.class, RESTHandler.urlActualREST() + MONEDA_GENERAL_PATH);
+    }
+
+    @Override
+    protected RestOperations template() {
+        return RESTHandler.OAuth2RestTemplate();
     }
 
     @Override
     public MonedaDomain findMonedaBase() throws Exception {
-        return template.getForObject(urlGeneral + MONEDA_FIND_BASE_PATH, MonedaDomain.class);
+        return template().getForObject(urlGeneral + MONEDA_FIND_BASE_PATH, MonedaDomain.class);
     }
 
 }

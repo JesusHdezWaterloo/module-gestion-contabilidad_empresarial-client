@@ -14,6 +14,7 @@ import com.jhw.utils.spring.client.RestTemplateUtils;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.springframework.web.client.RestOperations;
 
 /**
  *
@@ -22,7 +23,12 @@ import java.util.Map;
 public class OperacionContableRepoImpl extends ConsumerRepoTemplate<OperacionContableDomain> implements OperacionContableUseCase {
 
     public OperacionContableRepoImpl() {
-        super(RESTHandler.restTemplate(), OperacionContableDomain.class, RESTHandler.urlActualREST() + OPERACION_CONTABLE_GENERAL_PATH);
+        super(OperacionContableDomain.class, RESTHandler.urlActualREST() + OPERACION_CONTABLE_GENERAL_PATH);
+    }
+
+    @Override
+    protected RestOperations template() {
+        return RESTHandler.OAuth2RestTemplate();
     }
 
     /**
@@ -41,7 +47,7 @@ public class OperacionContableRepoImpl extends ConsumerRepoTemplate<OperacionCon
     public List<OperacionContableDomain> findAll(Integer idCuentaContable) throws Exception {
         Map<String, Object> map = new HashMap<>();
         map.put(CUENTA, idCuentaContable);
-        return RestTemplateUtils.getForList(template, urlGeneral + OPERACION_CONTABLE_FIND_ALL_PATH, map, OperacionContableDomain.class);
+        return RestTemplateUtils.getForList(template(), urlGeneral + OPERACION_CONTABLE_FIND_ALL_PATH, map, OperacionContableDomain.class);
     }
 
 }

@@ -12,6 +12,7 @@ import com.jhw.module.util.rest_config.services.RESTHandler;
 import com.jhw.utils.spring.client.ConsumerRepoTemplate;
 import com.jhw.utils.spring.client.RestTemplateUtils;
 import java.util.*;
+import org.springframework.web.client.RestOperations;
 
 /**
  *
@@ -20,17 +21,23 @@ import java.util.*;
 public class CuentaBancariaRepoImpl extends ConsumerRepoTemplate<CuentaBancariaDomain> implements CuentaBancariaUseCase {
 
     public CuentaBancariaRepoImpl() {
-        super(RESTHandler.restTemplate(), CuentaBancariaDomain.class, RESTHandler.urlActualREST() + CUENTA_BANCARIA_GENERAL_PATH);
+        super(CuentaBancariaDomain.class, RESTHandler.urlActualREST() + CUENTA_BANCARIA_GENERAL_PATH);
+    }
+
+    @Override
+    protected RestOperations template() {
+        return RESTHandler.OAuth2RestTemplate();
     }
 
     @Override
     public List<Cuenta> findAllCuentas() throws Exception {
-        return RestTemplateUtils.getForList(template, urlGeneral + CUENTA_BANCARIA_FIND_ALL_CUENTAS_PATH, Cuenta.class);
+        return RestTemplateUtils.getForList(template(), urlGeneral + CUENTA_BANCARIA_FIND_ALL_CUENTAS_PATH, Cuenta.class);
     }
 
     /**
-     * Delegate to findCuentaDefault(Integer idMoneda) para      * Delegate to findAllCuenta(Integer idTipoCuenta) para lightweight
-
+     * Delegate to findCuentaDefault(Integer idMoneda) para * Delegate to
+     * findAllCuenta(Integer idTipoCuenta) para lightweight
+     *
      *
      * @param moneda
      * @return
@@ -45,14 +52,14 @@ public class CuentaBancariaRepoImpl extends ConsumerRepoTemplate<CuentaBancariaD
     public CuentaBancariaDomain findCuentaDefault(Integer idMoneda) throws Exception {
         Map<String, Object> map = new HashMap<>();
         map.put(MONEDA, idMoneda);
-        return template.getForObject(urlGeneral + CUENTA_BANCARIA_FIND_DEFAULT_PATH, CuentaBancariaDomain.class, map);
+        return template().getForObject(urlGeneral + CUENTA_BANCARIA_FIND_DEFAULT_PATH, CuentaBancariaDomain.class, map);
     }
 
     @Override
     public List<CuentaBancariaDomain> findAll(String searchText) throws Exception {
         Map<String, Object> map = new HashMap<>();
         map.put(SEARCH_TEXT, searchText);
-        return RestTemplateUtils.getForList(template, urlGeneral + CUENTA_BANCARIA_FIND_ALL_SEARCH_PATH, map, CuentaBancariaDomain.class);
+        return RestTemplateUtils.getForList(template(), urlGeneral + CUENTA_BANCARIA_FIND_ALL_SEARCH_PATH, map, CuentaBancariaDomain.class);
     }
 
 }

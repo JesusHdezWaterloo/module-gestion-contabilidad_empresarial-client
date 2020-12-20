@@ -14,6 +14,7 @@ import com.jhw.utils.spring.client.RestTemplateUtils;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.springframework.web.client.RestOperations;
 
 /**
  *
@@ -22,7 +23,12 @@ import java.util.Map;
 public class TipoCuentaRepoImpl extends ConsumerRepoTemplate<TipoCuentaDomain> implements TipoCuentaUseCase {
 
     public TipoCuentaRepoImpl() {
-        super(RESTHandler.restTemplate(), TipoCuentaDomain.class, RESTHandler.urlActualREST() + TIPO_CUENTA_GENERAL_PATH);
+        super(TipoCuentaDomain.class, RESTHandler.urlActualREST() + TIPO_CUENTA_GENERAL_PATH);
+    }
+
+    @Override
+    protected RestOperations template() {
+        return RESTHandler.OAuth2RestTemplate();
     }
 
     /**
@@ -41,7 +47,7 @@ public class TipoCuentaRepoImpl extends ConsumerRepoTemplate<TipoCuentaDomain> i
     public List<TipoCuentaDomain> findAllEquivalent(Integer idTipoCuenta) throws Exception {
         Map<String, Object> map = new HashMap<>();
         map.put(TIPO_CUENTA, idTipoCuenta);
-        return RestTemplateUtils.getForList(template, urlGeneral + TIPO_CUENTA_FIND_ALL_EQUIVALENT_PATH, map, TipoCuentaDomain.class);
+        return RestTemplateUtils.getForList(template(), urlGeneral + TIPO_CUENTA_FIND_ALL_EQUIVALENT_PATH, map, TipoCuentaDomain.class);
     }
 
 }

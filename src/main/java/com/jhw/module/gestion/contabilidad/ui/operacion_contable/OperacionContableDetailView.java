@@ -25,7 +25,6 @@ public class OperacionContableDetailView extends _MaterialPanelDetail<OperacionC
     private static final String COL_DEBITO = "Débito";
     private static final String COL_CREDITO = "Crédito";
     private static final String COL_FECHA = "Fecha";
-    private static final String COL_CUENTA = "Cuenta";
 
     private final CuentaContableDomain cuenta;
 
@@ -39,8 +38,7 @@ public class OperacionContableDetailView extends _MaterialPanelDetail<OperacionC
                 Column.builder().name(COL_NOMBRE).build(),
                 Column.builder().name(COL_DEBITO).build(),
                 Column.builder().name(COL_CREDITO).build(),
-                Column.builder().name(COL_FECHA).build(),
-                Column.builder().name(COL_CUENTA).build()
+                Column.builder().name(COL_FECHA).build()
         );
         this.cuenta = cuenta;
 
@@ -87,7 +85,6 @@ public class OperacionContableDetailView extends _MaterialPanelDetail<OperacionC
             MoneyTableComponent.from(obj.getDebito(), obj.getCuentaFk().getMonedaFk()),
             MoneyTableComponent.from(obj.getCredito(), obj.getCuentaFk().getMonedaFk()),
             DTF.LOCAL_DATE_FORMATTER.format(obj.getInfoOperacionContableFk().getFecha()),
-            obj.getCuentaFk()
         };
     }
 

@@ -99,7 +99,7 @@ public class CuadreDetailView extends _MaterialPanelDetail<CuadreDomain> {
     private JPanel getLiquidado(CuadreDomain cuadre) {
         _PanelGradient panel = new _PanelGradient();
         if (cuadre.getLiquidada()) {
-            panel.setIcon(MaterialIcons.DONE);
+            panel.setIcon(MaterialIcons.ACCOUNT_BALANCE);
         } else {
             panel.setBackground(MaterialColors.TRANSPARENT);
             panel.setIcon(null);

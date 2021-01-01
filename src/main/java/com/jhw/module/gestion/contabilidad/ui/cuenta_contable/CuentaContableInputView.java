@@ -1,6 +1,6 @@
 package com.jhw.module.gestion.contabilidad.ui.cuenta_contable;
 
-import com.clean.core.app.services.ExceptionHandler;
+import com.root101.clean.core.app.services.ExceptionHandler;
 import com.jhw.module.gestion.contabilidad.core.domain.CuentaContableDomain;
 import com.jhw.swing.material.components.container.layout.VerticalLayoutContainer;
 import com.jhw.swing.models.clean.CleanCRUDInputView;

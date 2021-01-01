@@ -1,6 +1,6 @@
 package com.jhw.module.gestion.contabilidad.ui.module;
 
-import com.clean.core.app.services.NavigationService;
+import com.root101.clean.core.app.services.NavigationService;
 import com.jhw.swing.material.standards.MaterialIcons;
 import com.jhw.swing.derivable_icons.DerivableIcon;
 

@@ -1,6 +1,6 @@
 package com.jhw.module.gestion.contabilidad.ui.tipo_cuenta;
 
-import com.clean.core.exceptions.ValidationException;
+import com.root101.clean.core.exceptions.ValidationException;
 import com.jhw.module.gestion.contabilidad.core.domain.TipoCuentaDomain;
 import com.jhw.swing.material.components.container.layout.VerticalLayoutContainer;
 import com.jhw.swing.models.clean.CleanCRUDInputView;

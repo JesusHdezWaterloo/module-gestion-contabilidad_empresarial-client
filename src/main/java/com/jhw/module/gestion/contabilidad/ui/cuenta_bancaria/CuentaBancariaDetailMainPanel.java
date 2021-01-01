@@ -5,7 +5,7 @@
  */
 package com.jhw.module.gestion.contabilidad.ui.cuenta_bancaria;
 
-import com.clean.core.app.services.ExceptionHandler;
+import com.root101.clean.core.app.services.ExceptionHandler;
 import com.jhw.module.gestion.contabilidad.core.domain.CuentaBancariaDomain;
 import com.jhw.module.gestion.contabilidad.ui.cuenta.CuentaDetailMainPanel;
 import com.jhw.module.gestion.contabilidad.ui.cuenta.CuentaSinglePanel;

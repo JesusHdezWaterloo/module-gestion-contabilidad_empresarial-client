@@ -1,6 +1,6 @@
 package com.jhw.module.gestion.contabilidad.ui.tipo_operacion;
 
-import com.clean.core.app.services.ExceptionHandler;
+import com.root101.clean.core.app.services.ExceptionHandler;
 import com.jhw.module.gestion.contabilidad.core.domain.TipoOperacionContableDomain;
 import com.jhw.module.gestion.contabilidad.ui.module.ContabilidadModuleNavigator;
 import com.jhw.module.gestion.contabilidad.ui.module.ContabilidadSwingModule;

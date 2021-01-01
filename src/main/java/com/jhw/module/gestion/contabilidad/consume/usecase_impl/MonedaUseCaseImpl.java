@@ -5,8 +5,8 @@
  */
 package com.jhw.module.gestion.contabilidad.consume.usecase_impl;
 
-import com.clean.core.app.services.ExceptionHandler;
-import com.clean.core.app.usecase.*;
+import com.root101.clean.core.app.usecase.DefaultCRUDUseCase;
+import com.root101.clean.core.app.services.ExceptionHandler;
 import com.jhw.module.gestion.contabilidad.consume.module.ContabilidadConsumeCoreModule;
 import com.jhw.module.gestion.contabilidad.consume.repo_impl.*;
 import com.jhw.module.gestion.contabilidad.consume.usecase_def.*;

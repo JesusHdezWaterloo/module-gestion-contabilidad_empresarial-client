@@ -1,8 +1,8 @@
 package com.jhw.module.gestion.contabilidad.ui.cuadre;
 
-import com.clean.core.app.services.ExceptionHandler;
-import com.clean.core.app.services.Notification;
-import com.clean.core.app.services.NotificationsGeneralType;
+import com.root101.clean.core.app.services.ExceptionHandler;
+import com.root101.clean.core.app.services.NotificationHandler;
+import com.root101.clean.core.app.services.NotificationsGeneralType;
 import com.jhw.module.gestion.contabilidad.core.domain.CuadreDomain;
 import com.jhw.module.gestion.contabilidad.core.domain.LiquidacionDomain;
 import com.jhw.module.gestion.contabilidad.ui.liquidacion.LiquidacionInputView;
@@ -18,7 +18,7 @@ import com.jhw.swing.material.standards.MaterialColors;
 import com.jhw.swing.material.standards.MaterialIcons;
 import com.jhw.swing.models.input.dialogs.DialogModelInput;
 import com.jhw.swing.models.detail._MaterialPanelDetail;
-import com.jhw.utils.others.DTF;
+import com.root101.utils.others.DTF;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 import javax.swing.JPanel;
@@ -156,7 +156,7 @@ public class CuadreDetailView extends _MaterialPanelDetail<CuadreDomain> {
         try {
             CuadreDomain obj = getSelectedElement();
             if (obj.getLiquidada()) {
-                Notification.showConfirmDialog(NotificationsGeneralType.CONFIRM_INFO, "Ya este cuadre se liquidó.");
+                NotificationHandler.showConfirmDialog(NotificationsGeneralType.CONFIRM_INFO, "Ya este cuadre se liquidó.");
             } else {
                 LiquidacionDomain liq = ContabilidadSwingModule.liquicadionUC.getLiquidacion(obj);
                 new DialogModelInput(this, LiquidacionInputView.fromBase(liq));

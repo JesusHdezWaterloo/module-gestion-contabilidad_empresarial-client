@@ -1,6 +1,6 @@
 package com.jhw.module.gestion.contabilidad.ui.liquidacion;
 
-import com.clean.core.app.services.ExceptionHandler;
+import com.root101.clean.core.app.services.ExceptionHandler;
 import com.jhw.module.gestion.contabilidad.core.domain.CuentaBancariaDomain;
 import com.jhw.module.gestion.contabilidad.core.domain.LiquidacionDomain;
 import com.jhw.module.gestion.contabilidad.ui.module.ContabilidadModuleNavigator;
@@ -11,7 +11,7 @@ import com.jhw.swing.material.components.table.editors_renders.money.MoneyTableC
 import com.jhw.swing.models.input.dialogs.DialogModelInput;
 import com.jhw.swing.models.detail._MaterialPanelDetail;
 import com.jhw.swing.util.Utils;
-import com.jhw.utils.others.DTF;
+import com.root101.utils.others.DTF;
 import java.awt.Dimension;
 import java.awt.Rectangle;
 

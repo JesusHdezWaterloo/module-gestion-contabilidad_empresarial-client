@@ -1,6 +1,6 @@
 package com.jhw.module.gestion.contabilidad.ui.forma_pago;
 
-import com.clean.core.app.services.ExceptionHandler;
+import com.root101.clean.core.app.services.ExceptionHandler;
 import com.jhw.module.gestion.contabilidad.core.domain.FormaPagoDomain;
 import com.jhw.swing.material.components.table.Column;
 import com.jhw.swing.models.input.dialogs.DialogModelInput;

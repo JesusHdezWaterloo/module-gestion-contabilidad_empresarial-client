@@ -11,7 +11,7 @@ import com.jhw.swing.material.components.container.panel._PanelTransparent;
 import com.jhw.swing.material.components.scrollpane._MaterialScrollPaneCore;
 import com.jhw.swing.material.standards.MaterialShadow;
 import com.jhw.swing.models.detail.HeaderDetailPanel;
-import com.jhw.utils.interfaces.Update;
+import com.root101.utils.interfaces.Update;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.util.List;

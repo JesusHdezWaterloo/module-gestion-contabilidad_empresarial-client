@@ -2,9 +2,9 @@ plugins {
     id 'java'
 }
 
-group = 'com.jhw.module.gestion'
+group = 'com.root101.module.gestion'
 
-version = '3.4.0.SNAPSHOT.20201228'
+version = '3.9.9.SNAPSHOT.20201231'
 
 repositories {
     jcenter()
@@ -18,7 +18,7 @@ dependencies {
     implementation project(':utils-core')
     implementation project(':utils-spring')
     
-    implementation project(':clean-core-full')
+    implementation project(':clean-core')
     implementation project(':clean-swing')
     
     implementation project(':swing-derivable_icons')

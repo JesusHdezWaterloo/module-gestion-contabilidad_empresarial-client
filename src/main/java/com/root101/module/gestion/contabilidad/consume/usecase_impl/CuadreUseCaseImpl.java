@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.jhw.module.gestion.contabilidad.consume.usecase_impl;
+package com.root101.module.gestion.contabilidad.consume.usecase_impl;
 
 import com.root101.clean.core.app.usecase.DefaultCRUDUseCase;
-import com.jhw.module.gestion.contabilidad.consume.module.ContabilidadConsumeCoreModule;
-import com.jhw.module.gestion.contabilidad.consume.repo_impl.*;
-import com.jhw.module.gestion.contabilidad.consume.usecase_def.*;
+import com.root101.module.gestion.contabilidad.consume.module.ContabilidadConsumeCoreModule;
+import com.root101.module.gestion.contabilidad.consume.repo_impl.CuadreRepoImpl;
+import com.root101.module.gestion.contabilidad.consume.usecase_def.CuadreUseCaseConsume;
 import com.root101.module.gestion.contabilidad.core.domain.*;
 import java.util.List;
 

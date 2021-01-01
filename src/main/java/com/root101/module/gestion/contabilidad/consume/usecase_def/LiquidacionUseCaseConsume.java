@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.jhw.module.gestion.contabilidad.consume.usecase_def;
+package com.root101.module.gestion.contabilidad.consume.usecase_def;
 
 import com.root101.module.gestion.contabilidad.core.usecase_def.*;
 

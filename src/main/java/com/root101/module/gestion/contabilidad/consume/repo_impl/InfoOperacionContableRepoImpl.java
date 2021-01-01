@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.jhw.module.gestion.contabilidad.consume.repo_impl;
+package com.root101.module.gestion.contabilidad.consume.repo_impl;
 
 import static com.root101.module.gestion.contabilidad.core.ModuleGestionContabilidadEmpresarialConstants.*;
 import com.root101.module.gestion.contabilidad.core.domain.*;

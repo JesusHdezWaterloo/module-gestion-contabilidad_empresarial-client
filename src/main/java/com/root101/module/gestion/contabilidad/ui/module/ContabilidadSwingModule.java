@@ -31,6 +31,7 @@ import com.root101.module.gestion.contabilidad.ui.tipo_cuenta.TipoCuentaDetailVi
 import com.root101.module.gestion.contabilidad.ui.tipo_operacion.TipoOperacionContableDetailView;
 import com.root101.module.gestion.contabilidad.ui.titular.TitularDetailView;
 import com.jhw.swing.material.components.taskpane.CollapseMenu;
+import com.root101.module.gestion.contabilidad.consume.usecase_def.*;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 

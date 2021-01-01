@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.jhw.module.gestion.contabilidad.consume.module;
+package com.root101.module.gestion.contabilidad.consume.module;
 
 import com.root101.clean.core.app.modules.DefaultAbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import com.jhw.module.gestion.contabilidad.service.ResourceServiceClientImplementation;
+import com.root101.module.gestion.contabilidad.service.ResourceServiceClientImplementation;
 
 /**
  *

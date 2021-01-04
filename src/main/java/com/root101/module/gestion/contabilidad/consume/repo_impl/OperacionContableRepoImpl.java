@@ -16,7 +16,7 @@
  */
 package com.root101.module.gestion.contabilidad.consume.repo_impl;
 
-import static com.root101.module.gestion.contabilidad.rest.ModuleGestionContabilidadEmpresarialConstants.*;
+import static com.root101.module.gestion.contabilidad.rest.ModuleGestionContabilidadRESTConstants.*;
 import com.root101.module.gestion.contabilidad.core.domain.*;
 import com.root101.module.gestion.contabilidad.core.usecase_def.*;
 import com.jhw.module.util.rest_config.services.RESTHandler;

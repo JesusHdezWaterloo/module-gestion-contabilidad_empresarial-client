@@ -17,14 +17,14 @@
 package com.root101.module.gestion.contabilidad.ui.forma_pago;
 
 import com.root101.module.gestion.contabilidad.core.domain.FormaPagoDomain;
-import com.jhw.swing.material.components.container.layout.VerticalLayoutContainer;
-import com.jhw.swing.models.clean.CleanCRUDInputView;
+import com.root101.swing.material.components.container.layout.VerticalLayoutContainer;
+import com.root101.swing.models.clean.CleanCRUDInputView;
 import com.root101.module.gestion.contabilidad.ui.module.ContabilidadSwingModule;
-import com.jhw.swing.material.components.textarea.MaterialTextArea;
-import com.jhw.swing.prepared.textarea.MaterialPreparedTextAreaFactory;
-import com.jhw.swing.material.components.textfield.MaterialTextFactory;
-import com.jhw.swing.material.components.textfield.MaterialTextFieldIcon;
-import com.jhw.swing.material.standards.MaterialIcons;
+import com.root101.swing.material.components.textarea.MaterialTextArea;
+import com.root101.swing.prepared.textarea.MaterialPreparedTextAreaFactory;
+import com.root101.swing.material.components.textfield.MaterialTextFactory;
+import com.root101.swing.material.components.textfield.MaterialTextFieldIcon;
+import com.root101.swing.material.standards.MaterialIcons;
 import java.util.Map;
 
 /**

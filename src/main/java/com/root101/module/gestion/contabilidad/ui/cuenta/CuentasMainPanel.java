@@ -18,8 +18,8 @@ package com.root101.module.gestion.contabilidad.ui.cuenta;
 
 import com.root101.module.gestion.contabilidad.ui.cuenta_bancaria.CuentaBancariaDetailMainPanel;
 import com.root101.module.gestion.contabilidad.ui.cuenta_contable.CuentaContableDetailMainPanel;
-import com.jhw.swing.material.components.container.panel._PanelTransparent;
-import com.jhw.swing.material.components.scrollpane.SmoothScrollMouseWheelListener;
+import com.root101.swing.material.components.container.panel._PanelTransparent;
+import com.root101.swing.material.components.scrollpane.SmoothScrollMouseWheelListener;
 import com.root101.utils.interfaces.Update;
 import java.awt.BorderLayout;
 import javax.swing.JScrollPane;
@@ -46,7 +46,7 @@ public class CuentasMainPanel extends _PanelTransparent implements Update {
         JScrollPane scroll = new JScrollPane();
         scroll.getViewport().setOpaque(false);
         scroll.addMouseWheelListener(new SmoothScrollMouseWheelListener(scroll));
-        
+
         scroll.setViewportView(background);
         this.add(scroll);
 

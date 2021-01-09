@@ -19,8 +19,8 @@ package com.root101.module.gestion.contabilidad.ui.forma_pago;
 import com.root101.module.gestion.contabilidad.core.domain.FormaPagoDomain;
 import com.root101.module.gestion.contabilidad.ui.module.ContabilidadModuleNavigator;
 import com.root101.module.gestion.contabilidad.ui.module.ContabilidadSwingModule;
-import com.jhw.swing.models.input.icbs.InputComboBoxSelection;
-import com.jhw.swing.models.input.panels.ModelPanel;
+import com.root101.swing.models.input.icbs.InputComboBoxSelection;
+import com.root101.swing.models.input.panels.ModelPanel;
 import java.util.List;
 
 /**
@@ -36,7 +36,7 @@ public class FormaPagoICBS extends InputComboBoxSelection<FormaPagoDomain> {
     }
 
     @Override
-    public List<FormaPagoDomain> getList() throws Exception{
+    public List<FormaPagoDomain> getList() throws Exception {
         return ContabilidadSwingModule.formaPagoUC.findAll();
     }
 

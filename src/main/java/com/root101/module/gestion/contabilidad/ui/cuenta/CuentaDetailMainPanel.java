@@ -17,11 +17,11 @@
 package com.root101.module.gestion.contabilidad.ui.cuenta;
 
 import com.root101.module.gestion.contabilidad.core.domain.Cuenta;
-import com.jhw.swing.material.components.container.panel._MaterialPanel;
-import com.jhw.swing.material.components.container.panel._PanelTransparent;
-import com.jhw.swing.material.components.scrollpane._MaterialScrollPaneCore;
-import com.jhw.swing.material.standards.MaterialShadow;
-import com.jhw.swing.models.detail.HeaderDetailPanel;
+import com.root101.swing.material.components.container.panel._MaterialPanel;
+import com.root101.swing.material.components.container.panel._PanelTransparent;
+import com.root101.swing.material.components.scrollpane._MaterialScrollPaneCore;
+import com.root101.swing.material.standards.MaterialShadow;
+import com.root101.swing.models.detail.HeaderDetailPanel;
 import com.root101.utils.interfaces.Update;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;

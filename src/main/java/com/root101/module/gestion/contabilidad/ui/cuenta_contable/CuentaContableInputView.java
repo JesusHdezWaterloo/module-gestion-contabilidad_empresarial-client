@@ -18,18 +18,18 @@ package com.root101.module.gestion.contabilidad.ui.cuenta_contable;
 
 import com.root101.clean.core.app.services.ExceptionHandler;
 import com.root101.module.gestion.contabilidad.core.domain.CuentaContableDomain;
-import com.jhw.swing.material.components.container.layout.VerticalLayoutContainer;
-import com.jhw.swing.models.clean.CleanCRUDInputView;
+import com.root101.swing.material.components.container.layout.VerticalLayoutContainer;
+import com.root101.swing.models.clean.CleanCRUDInputView;
 import com.root101.module.gestion.contabilidad.ui.module.ContabilidadModuleNavigator;
 import com.root101.module.gestion.contabilidad.ui.module.ContabilidadSwingModule;
 import com.root101.module.gestion.contabilidad.ui.moneda.MonedaICBS;
 import com.root101.module.gestion.contabilidad.ui.tipo_cuenta.TipoCuentaICBS;
 import com.root101.module.gestion.contabilidad.ui.titular.TitularICBS;
-import com.jhw.swing.material.components.textarea.MaterialTextArea;
-import com.jhw.swing.prepared.textarea.MaterialPreparedTextAreaFactory;
-import com.jhw.swing.material.components.textfield.MaterialTextFactory;
-import com.jhw.swing.material.components.textfield.MaterialTextFieldIcon;
-import com.jhw.swing.material.standards.MaterialIcons;
+import com.root101.swing.material.components.textarea.MaterialTextArea;
+import com.root101.swing.prepared.textarea.MaterialPreparedTextAreaFactory;
+import com.root101.swing.material.components.textfield.MaterialTextFactory;
+import com.root101.swing.material.components.textfield.MaterialTextFieldIcon;
+import com.root101.swing.material.standards.MaterialIcons;
 import java.util.Map;
 
 /**
@@ -106,13 +106,9 @@ public class CuentaContableInputView extends CleanCRUDInputView<CuentaContableDo
     public void update() {
         super.update();
         monedaICBS.setEnabled(getOldModel() == null);
-        
+
         if (getOldModel() != null) {
-            try {
-                tipoCuentaICBS.updateComboBoxEquivalent(getOldModel().getTipoCuentaFk());
-            } catch (Exception e) {
-                ExceptionHandler.handleException(e);
-            }
+            tipoCuentaICBS.updateComboBoxEquivalent(getOldModel().getTipoCuentaFk());
         }
     }
 

@@ -17,17 +17,17 @@
 package com.root101.module.gestion.contabilidad.ui.cuadre.pedazos;
 
 import com.root101.module.gestion.contabilidad.core.domain.TipoOperacionContableDomain;
-import com.jhw.swing.material.components.container.layout.VerticalLayoutContainer;
-import com.jhw.swing.models.clean.CleanCRUDInputView;
+import com.root101.swing.material.components.container.layout.VerticalLayoutContainer;
+import com.root101.swing.models.clean.CleanCRUDInputView;
 import com.root101.module.gestion.contabilidad.core.domain.facade.OperacionCuadreUI;
 import com.root101.module.gestion.contabilidad.ui.cuenta_contable.CuentaContableICBS;
 import com.root101.module.gestion.contabilidad.ui.moneda.MonedaICBS;
 import com.root101.module.gestion.contabilidad.ui.tipo_operacion.TipoOperacionContableICBS;
-import com.jhw.swing.material.components.container.layout.HorizontalLayoutComponent;
-import com.jhw.swing.material.components.container.layout.HorizontalLayoutContainer;
-import com.jhw.swing.material.components.textfield.MaterialFormatedTextFieldIcon;
-import com.jhw.swing.material.standards.MaterialIcons;
-import com.jhw.swing.prepared.textfield.MaterialPreparedTextFactory;
+import com.root101.swing.material.components.container.layout.HorizontalLayoutComponent;
+import com.root101.swing.material.components.container.layout.HorizontalLayoutContainer;
+import com.root101.swing.material.components.textfield.MaterialFormatedTextFieldIcon;
+import com.root101.swing.material.standards.MaterialIcons;
+import com.root101.swing.prepared.textfield.MaterialPreparedTextFactory;
 import java.awt.event.ActionEvent;
 import java.util.Map;
 
@@ -159,9 +159,6 @@ public class OperacionCuadreInputView extends CleanCRUDInputView<OperacionCuadre
     }
 
     private void changeTipoOp() {
-        try {
-            setTipoOp(tipoOperICBS.getObject());
-        } catch (Exception e) {
-        }
+        setTipoOp(tipoOperICBS.getObject());
     }
 }

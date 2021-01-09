@@ -16,12 +16,12 @@
  */
 package com.root101.module.gestion.contabilidad.consume.repo_impl;
 
-import static com.root101.module.gestion.contabilidad.core.ModuleGestionContabilidadEmpresarialConstants.*;
+import static com.root101.module.gestion.contabilidad.rest.ModuleGestionContabilidadRESTConstants.*;
 import com.root101.module.gestion.contabilidad.core.domain.*;
 import com.root101.module.gestion.contabilidad.core.usecase_def.*;
-import com.jhw.module.util.rest_config.services.RESTHandler;
-import com.jhw.utils.spring.client.ConsumerRepoTemplate;
-import com.jhw.utils.spring.client.RestTemplateUtils;
+import com.root101.module.util.rest_config.services.RESTHandler;
+import com.root101.spring.client.ConsumerRepoTemplate;
+import com.root101.spring.client.RestTemplateUtils;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

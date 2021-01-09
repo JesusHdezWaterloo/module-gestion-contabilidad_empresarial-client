@@ -20,9 +20,9 @@ import com.root101.module.gestion.contabilidad.core.domain.CuentaContableDomain;
 import com.root101.module.gestion.contabilidad.core.domain.MonedaDomain;
 import com.root101.module.gestion.contabilidad.core.domain.TipoCuentaDomain;
 import com.root101.module.gestion.contabilidad.ui.module.ContabilidadSwingModule;
-import com.jhw.swing.models.input.icbs.InputComboBoxSelection;
+import com.root101.swing.models.input.icbs.InputComboBoxSelection;
 import com.root101.module.gestion.contabilidad.ui.module.ContabilidadModuleNavigator;
-import com.jhw.swing.models.input.panels.ModelPanel;
+import com.root101.swing.models.input.panels.ModelPanel;
 import java.util.List;
 
 /**
@@ -40,7 +40,7 @@ public class CuentaContableICBS extends InputComboBoxSelection<CuentaContableDom
     }
 
     @Override
-    public List<CuentaContableDomain> getList() throws Exception{
+    public List<CuentaContableDomain> getList() throws Exception {
         actualList = ContabilidadSwingModule.cuentaContableUC.findAll();
         return actualList;
     }
@@ -49,7 +49,7 @@ public class CuentaContableICBS extends InputComboBoxSelection<CuentaContableDom
     public ModelPanel<CuentaContableDomain> inputPanel() {
         return CuentaContableInputView.from();
     }
-    
+
     public void setMatchingItem(TipoCuentaDomain tipo, MonedaDomain moneda) {
         for (CuentaContableDomain c : actualList) {
             if (c.getTipoCuentaFk().equals(tipo) && c.getMonedaFk().equals(moneda)) {

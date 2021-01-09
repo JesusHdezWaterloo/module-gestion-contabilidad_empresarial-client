@@ -18,9 +18,9 @@ package com.root101.module.gestion.contabilidad.ui.cuenta_bancaria;
 
 import com.root101.module.gestion.contabilidad.core.domain.CuentaBancariaDomain;
 import com.root101.module.gestion.contabilidad.ui.module.ContabilidadSwingModule;
-import com.jhw.swing.models.input.icbs.InputComboBoxSelection;
+import com.root101.swing.models.input.icbs.InputComboBoxSelection;
 import com.root101.module.gestion.contabilidad.ui.module.ContabilidadModuleNavigator;
-import com.jhw.swing.models.input.panels.ModelPanel;
+import com.root101.swing.models.input.panels.ModelPanel;
 import java.util.List;
 
 /**
@@ -36,7 +36,7 @@ public class CuentaBancariaICBS extends InputComboBoxSelection<CuentaBancariaDom
     }
 
     @Override
-    public List<CuentaBancariaDomain> getList() throws Exception{
+    public List<CuentaBancariaDomain> getList() throws Exception {
         return ContabilidadSwingModule.cuentaBancariaUC.findAll();
     }
 

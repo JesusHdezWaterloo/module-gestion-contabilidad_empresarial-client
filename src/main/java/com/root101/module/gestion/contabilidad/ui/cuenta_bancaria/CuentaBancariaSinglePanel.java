@@ -20,9 +20,9 @@ import com.root101.module.gestion.contabilidad.core.domain.CuentaBancariaDomain;
 import com.root101.module.gestion.contabilidad.ui.liquidacion.LiquidacionDetailView;
 import com.root101.module.gestion.contabilidad.ui.cuenta.CuentaSinglePanel;
 import com.root101.module.gestion.contabilidad.ui.module.ContabilidadSwingModule;
-import com.jhw.swing.models.detail.DialogDetail;
-import com.jhw.swing.models.input.dialogs.DialogModelInput;
-import com.jhw.swing.models.utils.UpdateListener;
+import com.root101.swing.models.detail.DialogDetail;
+import com.root101.swing.models.input.dialogs.DialogModelInput;
+import com.root101.swing.models.utils.UpdateListener;
 
 /**
  *

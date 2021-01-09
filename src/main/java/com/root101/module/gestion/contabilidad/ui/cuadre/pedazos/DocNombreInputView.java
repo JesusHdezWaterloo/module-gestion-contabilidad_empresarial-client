@@ -16,12 +16,12 @@
  */
 package com.root101.module.gestion.contabilidad.ui.cuadre.pedazos;
 
-import com.jhw.swing.material.components.container.layout.VerticalLayoutContainer;
-import com.jhw.swing.models.clean.CleanCRUDInputView;
+import com.root101.swing.material.components.container.layout.VerticalLayoutContainer;
+import com.root101.swing.models.clean.CleanCRUDInputView;
 import com.root101.module.gestion.contabilidad.core.domain.facade.DocNombreUI;
-import com.jhw.swing.material.components.textfield.MaterialTextFactory;
-import com.jhw.swing.material.components.textfield.MaterialTextFieldIcon;
-import com.jhw.swing.material.standards.MaterialIcons;
+import com.root101.swing.material.components.textfield.MaterialTextFactory;
+import com.root101.swing.material.components.textfield.MaterialTextFieldIcon;
+import com.root101.swing.material.standards.MaterialIcons;
 import java.util.Map;
 
 /**

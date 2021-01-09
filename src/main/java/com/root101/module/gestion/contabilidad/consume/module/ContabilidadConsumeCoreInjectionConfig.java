@@ -54,13 +54,13 @@ public class ContabilidadConsumeCoreInjectionConfig extends AbstractModule {
 
         bind(OperacionContableUseCase.class).to(OperacionContableUseCaseImpl.class).in(Singleton.class);
         bind(OperacionContableUseCaseConsume.class).to(OperacionContableUseCaseImpl.class).in(Singleton.class);
-    
+
         bind(TipoCuentaUseCase.class).to(TipoCuentaUseCaseImpl.class).in(Singleton.class);
         bind(TipoCuentaUseCaseConsume.class).to(TipoCuentaUseCaseImpl.class).in(Singleton.class);
-    
+
         bind(TipoOperacionContableUseCase.class).to(TipoOperacionContableUseCaseImpl.class).in(Singleton.class);
         bind(TipoOperacionContableUseCaseConsume.class).to(TipoOperacionContableUseCaseImpl.class).in(Singleton.class);
-    
+
         bind(TitularUseCase.class).to(TitularUseCaseImpl.class).in(Singleton.class);
         bind(TitularUseCaseConsume.class).to(TitularUseCaseImpl.class).in(Singleton.class);
     }

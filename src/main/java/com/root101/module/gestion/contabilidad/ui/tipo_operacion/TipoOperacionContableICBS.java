@@ -17,10 +17,10 @@
 package com.root101.module.gestion.contabilidad.ui.tipo_operacion;
 
 import com.root101.module.gestion.contabilidad.ui.module.ContabilidadSwingModule;
-import com.jhw.swing.models.input.icbs.InputComboBoxSelection;
+import com.root101.swing.models.input.icbs.InputComboBoxSelection;
 import com.root101.module.gestion.contabilidad.core.domain.TipoOperacionContableDomain;
 import com.root101.module.gestion.contabilidad.ui.module.ContabilidadModuleNavigator;
-import com.jhw.swing.models.input.panels.ModelPanel;
+import com.root101.swing.models.input.panels.ModelPanel;
 import java.util.List;
 
 /**
@@ -36,7 +36,7 @@ public class TipoOperacionContableICBS extends InputComboBoxSelection<TipoOperac
     }
 
     @Override
-    public List<TipoOperacionContableDomain> getList() throws Exception{
+    public List<TipoOperacionContableDomain> getList() throws Exception {
         return ContabilidadSwingModule.tipoOperacionContableUC.findAll();
     }
 

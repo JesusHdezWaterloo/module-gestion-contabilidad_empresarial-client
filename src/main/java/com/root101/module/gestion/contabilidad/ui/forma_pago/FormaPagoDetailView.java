@@ -18,9 +18,9 @@ package com.root101.module.gestion.contabilidad.ui.forma_pago;
 
 import com.root101.clean.core.app.services.ExceptionHandler;
 import com.root101.module.gestion.contabilidad.core.domain.FormaPagoDomain;
-import com.jhw.swing.material.components.table.Column;
-import com.jhw.swing.models.input.dialogs.DialogModelInput;
-import com.jhw.swing.models.detail._MaterialPanelDetail;
+import com.root101.swing.material.components.table.Column;
+import com.root101.swing.models.input.dialogs.DialogModelInput;
+import com.root101.swing.models.detail._MaterialPanelDetail;
 import com.root101.module.gestion.contabilidad.ui.module.ContabilidadModuleNavigator;
 import com.root101.module.gestion.contabilidad.ui.module.ContabilidadSwingModule;
 
@@ -46,7 +46,7 @@ public class FormaPagoDetailView extends _MaterialPanelDetail<FormaPagoDomain> {
     private void personalize() {
         this.setHeaderText("Forma de Pago");
         this.setIcon(ContabilidadModuleNavigator.ICON_FORMA_PAGO);
-        
+
         this.setActionColumnButtonsVisivility(true, true, false);//no pone el view, no esta implementado todavia
     }
 

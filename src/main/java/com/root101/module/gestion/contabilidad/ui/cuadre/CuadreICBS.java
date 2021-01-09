@@ -18,9 +18,9 @@ package com.root101.module.gestion.contabilidad.ui.cuadre;
 
 import com.root101.module.gestion.contabilidad.core.domain.CuadreDomain;
 import com.root101.module.gestion.contabilidad.ui.module.ContabilidadSwingModule;
-import com.jhw.swing.models.input.icbs.InputComboBoxSelection;
+import com.root101.swing.models.input.icbs.InputComboBoxSelection;
 import com.root101.module.gestion.contabilidad.ui.module.ContabilidadModuleNavigator;
-import com.jhw.swing.models.input.panels.ModelPanel;
+import com.root101.swing.models.input.panels.ModelPanel;
 import java.util.List;
 
 /**

@@ -21,12 +21,12 @@ import com.root101.module.gestion.contabilidad.core.domain.CuentaBancariaDomain;
 import com.root101.module.gestion.contabilidad.core.domain.LiquidacionDomain;
 import com.root101.module.gestion.contabilidad.ui.module.ContabilidadModuleNavigator;
 import com.root101.module.gestion.contabilidad.ui.module.ContabilidadSwingModule;
-import com.jhw.swing.material.components.table.Column;
-import com.jhw.swing.material.components.table.editors_renders.money.MoneyCellRender;
-import com.jhw.swing.material.components.table.editors_renders.money.MoneyTableComponent;
-import com.jhw.swing.models.input.dialogs.DialogModelInput;
-import com.jhw.swing.models.detail._MaterialPanelDetail;
-import com.jhw.swing.util.Utils;
+import com.root101.swing.material.components.table.Column;
+import com.root101.swing.material.components.table.editors_renders.money.MoneyCellRender;
+import com.root101.swing.material.components.table.editors_renders.money.MoneyTableComponent;
+import com.root101.swing.models.input.dialogs.DialogModelInput;
+import com.root101.swing.models.detail._MaterialPanelDetail;
+import com.root101.swing.util.Utils;
 import com.root101.utils.others.DTF;
 import java.awt.Dimension;
 import java.awt.Rectangle;
@@ -37,7 +37,7 @@ import java.awt.Rectangle;
  * @author JesusHdezWaterloo@Github
  */
 public class LiquidacionDetailView extends _MaterialPanelDetail<LiquidacionDomain> {
-    
+
     private static final String COL_DCUMENTO = "Documento";
     private static final String COL_NOMBRE = "Nombre";
     private static final String COL_DEBITO = "+";
@@ -45,13 +45,13 @@ public class LiquidacionDetailView extends _MaterialPanelDetail<LiquidacionDomai
     private static final String COL_FECHA = "Fecha";
     private static final String COL_CUENTA = "Cuenta";
     private static final String COL_REFERENCIA = "Referencia";
-    
+
     private final CuentaBancariaDomain cuenta;
-    
+
     public LiquidacionDetailView() {
         this(null);
     }
-    
+
     public LiquidacionDetailView(CuentaBancariaDomain cuenta) {
         super(
                 Column.builder().name(COL_DCUMENTO).build(),
@@ -62,26 +62,26 @@ public class LiquidacionDetailView extends _MaterialPanelDetail<LiquidacionDomai
                 Column.builder().name(COL_REFERENCIA).build(),
                 Column.builder().name(COL_CUENTA).build()
         );
-        
+
         this.cuenta = cuenta;
         this.personalize();
-        
+
         this.update();//update aqui ya que es un dialog que mas nadie lo actualiza
     }
-    
+
     private void personalize() {
         setUpEditorsRenders();
-        
+
         String cuentaStr = cuenta == null ? "" : ": " + cuenta.toString();
         this.setHeaderText("Liquidaciones" + cuentaStr);
         this.setIcon(ContabilidadModuleNavigator.ICON_LIQUIDACIONES);
 
         this.setActionColumnButtonsVisivility(true, true, false);//no pone el view, no esta implementado todavia
         changeSize();
-        
+
         sizeColumnCuenta();
     }
-    
+
     private void sizeColumnCuenta() {
         //si es de una cuenta especifica no muestra la columna, es redundante
         if (cuenta != null) {
@@ -90,12 +90,12 @@ public class LiquidacionDetailView extends _MaterialPanelDetail<LiquidacionDomai
             getTable().getColumn(COL_CUENTA).setPreferredWidth(0);
         }
     }
-    
+
     private void changeSize() {
         Rectangle screen = Utils.getScreenSize();
         setPreferredSize(new Dimension(screen.width * 8 / 10, screen.height * 8 / 10));
     }
-    
+
     @Override
     public void update() {
         try {
@@ -104,7 +104,7 @@ public class LiquidacionDetailView extends _MaterialPanelDetail<LiquidacionDomai
             ExceptionHandler.handleException(e);
         }
     }
-    
+
     @Override
     public Object[] getRowObject(LiquidacionDomain obj) {
         return new Object[]{
@@ -117,12 +117,12 @@ public class LiquidacionDetailView extends _MaterialPanelDetail<LiquidacionDomai
             obj.getCuentaFk()
         };
     }
-    
+
     @Override
     protected void buttonNuevoActionListener() {
         new DialogModelInput(this, LiquidacionInputView.from());
     }
-    
+
     @Override
     protected LiquidacionDomain deleteAction(LiquidacionDomain obj) {
         try {
@@ -132,17 +132,17 @@ public class LiquidacionDetailView extends _MaterialPanelDetail<LiquidacionDomai
         }
         return null;
     }
-    
+
     @Override
     protected void editAction(LiquidacionDomain obj) {
         new DialogModelInput(this, LiquidacionInputView.fromModel(obj));
     }
-    
+
     @Override
     protected void viewAction(LiquidacionDomain obj) {
         System.out.println("NO NECESARIO TODAVÍA.");
     }
-    
+
     private void setUpEditorsRenders() {
         getTable().getColumn(COL_DEBITO).setCellRenderer(new MoneyCellRender());
         getTable().getColumn(COL_CREDITO).setCellRenderer(new MoneyCellRender());

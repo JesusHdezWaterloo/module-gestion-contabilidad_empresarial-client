@@ -17,9 +17,9 @@
 package com.root101.module.gestion.contabilidad.ui.moneda;
 
 import com.root101.module.gestion.contabilidad.ui.module.ContabilidadSwingModule;
-import com.jhw.swing.models.input.icbs.InputComboBoxSelection;
+import com.root101.swing.models.input.icbs.InputComboBoxSelection;
 import com.root101.module.gestion.contabilidad.core.domain.MonedaDomain;
-import com.jhw.swing.models.input.panels.ModelPanel;
+import com.root101.swing.models.input.panels.ModelPanel;
 import java.util.List;
 
 /**

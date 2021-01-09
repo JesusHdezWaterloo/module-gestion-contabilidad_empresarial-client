@@ -17,14 +17,14 @@
 package com.root101.module.gestion.contabilidad.ui.titular;
 
 import com.root101.module.gestion.contabilidad.core.domain.TitularDomain;
-import com.jhw.swing.models.clean.CleanCRUDInputView;
+import com.root101.swing.models.clean.CleanCRUDInputView;
 import com.root101.module.gestion.contabilidad.ui.module.ContabilidadSwingModule;
-import com.jhw.swing.material.components.container.layout.VerticalLayoutContainer;
-import com.jhw.swing.material.components.textarea.MaterialTextArea;
-import com.jhw.swing.prepared.textarea.MaterialPreparedTextAreaFactory;
-import com.jhw.swing.material.components.textfield.MaterialTextFactory;
-import com.jhw.swing.material.components.textfield.MaterialTextFieldIcon;
-import com.jhw.swing.material.standards.MaterialIcons;
+import com.root101.swing.material.components.container.layout.VerticalLayoutContainer;
+import com.root101.swing.material.components.textarea.MaterialTextArea;
+import com.root101.swing.prepared.textarea.MaterialPreparedTextAreaFactory;
+import com.root101.swing.material.components.textfield.MaterialTextFactory;
+import com.root101.swing.material.components.textfield.MaterialTextFieldIcon;
+import com.root101.swing.material.standards.MaterialIcons;
 import java.util.Map;
 
 /**
@@ -37,6 +37,7 @@ public class TitularInputView extends CleanCRUDInputView<TitularDomain> {
     public static TitularInputView from() {
         return new TitularInputView(null);
     }
+
     public static TitularInputView fromModel(TitularDomain model) {
         return new TitularInputView(model);
     }
@@ -57,7 +58,7 @@ public class TitularInputView extends CleanCRUDInputView<TitularDomain> {
         textFieldNombre.setIcon(MaterialIcons.PRIORITY_HIGH);
 
         //descripcion
-        textAreaDescripcion  = MaterialPreparedTextAreaFactory.buildDescripcion();
+        textAreaDescripcion = MaterialPreparedTextAreaFactory.buildDescripcion();
 
         VerticalLayoutContainer.builder vlc = VerticalLayoutContainer.builder();
         vlc.add(textFieldNombre);

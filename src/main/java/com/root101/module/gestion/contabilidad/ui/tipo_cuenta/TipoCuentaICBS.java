@@ -16,11 +16,12 @@
  */
 package com.root101.module.gestion.contabilidad.ui.tipo_cuenta;
 
+import com.root101.clean.core.app.services.ExceptionHandler;
 import com.root101.module.gestion.contabilidad.ui.module.ContabilidadSwingModule;
-import com.jhw.swing.models.input.icbs.InputComboBoxSelection;
+import com.root101.swing.models.input.icbs.InputComboBoxSelection;
 import com.root101.module.gestion.contabilidad.core.domain.TipoCuentaDomain;
 import com.root101.module.gestion.contabilidad.ui.module.ContabilidadModuleNavigator;
-import com.jhw.swing.models.input.panels.ModelPanel;
+import com.root101.swing.models.input.panels.ModelPanel;
 import java.util.List;
 
 /**
@@ -40,9 +41,13 @@ public class TipoCuentaICBS extends InputComboBoxSelection<TipoCuentaDomain> {
         return ContabilidadSwingModule.tipoCuentaUC.findAll();
     }
 
-    public void updateComboBoxEquivalent(TipoCuentaDomain selectedItem) throws Exception {
-        setUpList(ContabilidadSwingModule.tipoCuentaUC.findAllEquivalent(selectedItem));
-        setObject(selectedItem);
+    public void updateComboBoxEquivalent(TipoCuentaDomain selectedItem) {
+        try {
+            setUpList(ContabilidadSwingModule.tipoCuentaUC.findAllEquivalent(selectedItem));
+            setObject(selectedItem);
+        } catch (Exception e) {
+            ExceptionHandler.handleException(e);
+        }
     }
 
     @Override

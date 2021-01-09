@@ -17,9 +17,9 @@
 package com.root101.module.gestion.contabilidad;
 
 import com.root101.module.gestion.contabilidad.ui.module.ContabilidadSwingModule;
-import com.jhw.module.util.default_config.DefaultConfigSwingModule;
-import com.jhw.module.util.personalization.ui.module.PersonalizationSwingModule;
-import com.jhw.swing.ui.MaterialLookAndFeel;
+import com.root101.module.util.default_config.DefaultConfigSwingModule;
+import com.root101.module.util.personalization.ui.module.PersonalizationSwingModule;
+import com.root101.swing.ui.MaterialLookAndFeel;
 import javax.swing.UIManager;
 
 /**
@@ -36,7 +36,7 @@ public class MainTest {
         DefaultConfigSwingModule.init();
 
         ContabilidadSwingModule.init();
-        
+
         System.out.println("antes");
         System.out.println(ContabilidadSwingModule.cuadreUC.findAll());
         System.out.println("ya");

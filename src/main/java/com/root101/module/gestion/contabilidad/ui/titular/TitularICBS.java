@@ -17,10 +17,10 @@
 package com.root101.module.gestion.contabilidad.ui.titular;
 
 import com.root101.module.gestion.contabilidad.ui.module.ContabilidadSwingModule;
-import com.jhw.swing.models.input.icbs.InputComboBoxSelection;
+import com.root101.swing.models.input.icbs.InputComboBoxSelection;
 import com.root101.module.gestion.contabilidad.core.domain.TitularDomain;
 import com.root101.module.gestion.contabilidad.ui.module.ContabilidadModuleNavigator;
-import com.jhw.swing.models.input.panels.ModelPanel;
+import com.root101.swing.models.input.panels.ModelPanel;
 import java.util.List;
 
 /**
@@ -36,7 +36,7 @@ public class TitularICBS extends InputComboBoxSelection<TitularDomain> {
     }
 
     @Override
-    public List<TitularDomain> getList() throws Exception{
+    public List<TitularDomain> getList() throws Exception {
         return ContabilidadSwingModule.titularUC.findAll();
     }
 

@@ -21,11 +21,11 @@ import com.root101.module.gestion.contabilidad.core.domain.CuentaContableDomain;
 import com.root101.module.gestion.contabilidad.core.domain.OperacionContableDomain;
 import com.root101.module.gestion.contabilidad.ui.module.ContabilidadModuleNavigator;
 import com.root101.module.gestion.contabilidad.ui.module.ContabilidadSwingModule;
-import com.jhw.swing.material.components.table.Column;
-import com.jhw.swing.material.components.table.editors_renders.money.MoneyCellRender;
-import com.jhw.swing.material.components.table.editors_renders.money.MoneyTableComponent;
-import com.jhw.swing.models.detail._MaterialPanelDetail;
-import com.jhw.swing.util.Utils;
+import com.root101.swing.material.components.table.Column;
+import com.root101.swing.material.components.table.editors_renders.money.MoneyCellRender;
+import com.root101.swing.material.components.table.editors_renders.money.MoneyTableComponent;
+import com.root101.swing.models.detail._MaterialPanelDetail;
+import com.root101.swing.util.Utils;
 import com.root101.utils.others.DTF;
 import java.awt.Dimension;
 import java.awt.Rectangle;
@@ -101,8 +101,7 @@ public class OperacionContableDetailView extends _MaterialPanelDetail<OperacionC
             obj.getInfoOperacionContableFk().getNombre(),
             MoneyTableComponent.from(obj.getDebito(), obj.getCuentaFk().getMonedaFk()),
             MoneyTableComponent.from(obj.getCredito(), obj.getCuentaFk().getMonedaFk()),
-            DTF.LOCAL_DATE_FORMATTER.format(obj.getInfoOperacionContableFk().getFecha()),
-        };
+            DTF.LOCAL_DATE_FORMATTER.format(obj.getInfoOperacionContableFk().getFecha()),};
     }
 
     @Override
